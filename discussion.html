@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Recipedia - Discussion Forum</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+        .discussion-form {
+            margin-top: 20px;
+        }
+    </style>
+    </head>
+    <body>
+
+        <header>
+            <h1>Recipedia</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="trendy.html">Trendy Recipes</a>
+            <a href="challenge.html">Challenges</a>
+            <a href="discussion.html" class="selectedNav">Discussion</a>
+            <a href="create_recipe.html">Create Recipe</a>
+            <a href="account.html" style="float: right;">Account</a>
+        </nav>
+
+        <div class="container">
+            <h2>Community Discussions</h2>
+
+            <div class="post">
+                <h4>Best Substitutes for Sugar?</h4>
+                <p>Posted by <strong>UserA</strong> on October 15, 2024</p>
+                <p>I'm looking for healthy alternatives to sugar in baking. Any
+                    suggestions?</p>
+                <a href="discussion_thread.html">View Replies (5)</a>
+            </div>
+
+            <div class="post">
+                <h4>How to increase my calories intake?</h4>
+                <p>Posted by <strong>UserB</strong> on October 14, 2024</p>
+                <p>It is really hard to stick to 4k kcal diet. Any tips?</p>
+                <a href="discussion_thread.html">View Replies (3)</a>
+            </div>
+
+            <div class="post">
+                <h4>Favorite Vegan Dishes?</h4>
+                <p>Posted by <strong>UserC</strong> on October 13, 2024</p>
+                <p>Lol, I'm joking! Give me some best steak recipes!</p>
+                <a href="discussion_thread.html">View Replies (7)</a>
+            </div>
+
+            <form class="discussion-form">
+                <h3>Start a New Discussion</h3>
+                <label for="discussion-title">Title:</label>
+                <input type="text" id="discussion-title" name="discussion-title"
+                    placeholder="Enter discussion title" required>
+
+                <label for="discussion-content">Content:</label>
+                <textarea id="discussion-content" name="discussion-content"
+                    placeholder="What's on your mind?" required></textarea>
+
+                <input type="submit" value="Post Discussion">
+            </form>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 Recipedia</p>
+        </footer>
+
+    </body>
+</html>

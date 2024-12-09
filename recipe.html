@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Recipedia: recipePage</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+        .rating {
+            color: gold;
+            font-size: 1.5em;
+        }
+        .comment-form textarea {
+            height: 80px;
+        }
+    </style>
+    </head>
+    <body>
+
+        <header>
+            <h1>Recipedia</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="trendy.html">Trendy Recipes</a>
+            <a href="challenge.html">Challenges</a>
+            <a href="discussion.html">Discussion</a>
+            <a href="create_recipe.html">Create Recipe</a>
+            <a href="account.html" style="float: right;">Account</a>
+        </nav>
+
+        <div class="container">
+            <h2>Recipe Title</h2>
+            <p><strong>Description:</strong> A brief description of the recipe
+                goes here.</p>
+
+            <h3>Ingredients</h3>
+            <ul>
+                <li>Ingredient 1</li>
+                <li>Ingredient 2</li>
+                <li>Ingredient 3</li>
+            </ul>
+
+            <h3>Instructions</h3>
+            <ol>
+                <li>Step one</li>
+                <li>Step two</li>
+                <li>Step three</li>
+            </ol>
+
+            <h3>Rating</h3>
+            <p class="rating">★★★★☆</p>
+
+            <h3>Comments</h3>
+            <ul class="comment-list">
+                <li>"Loved this recipe!" - Foodie89</li>
+                <li>"Easy to make and delicious." - HomeChef22</li>
+            </ul>
+
+            <form class="comment-form">
+                <textarea placeholder="Add a comment..."></textarea>
+                <input type="submit" value="Post Comment">
+            </form>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 Recipedia</p>
+        </footer>
+
+    </body>
+</html>
