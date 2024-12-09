@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Recipedia: ' + ${recipe.getTitle()}"></title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+    <style>
+        .rating {
+            color: gold;
+            font-size: 1.5em;
+        }
+
+        .comment-form textarea {
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <header>
+        <h1>Recipedia</h1>
+    </header>
+
+    <nav>
+        <a th:href="@{/}" class="selectedNav">Home</a>
+        <a href="trendy.html">Trendy Recipes</a>
+        <a href="challenge.html">Challenges</a>
+        <a href="discussion.html">Discussion</a>
+        <a href="create_recipe.html">Create Recipe</a>
+        <a href="login.html" style="float: right;">Account</a>
+    </nav>
+</div>
+
+<div class="container">
+    <h2 th:text="${recipe.getTitle()}"></h2>
+    <p><strong>Description:</strong> <span th:text="${recipe.getDescription()}"></span></p>
+
+    <h3>Ingredients</h3>
+    <ul>
+        <li th:each="ingredient: ${recipe.getIngredients()}" th:text="ingredient"></li>
+    </ul>
+
+    <h3>Instructions</h3>
+    <p th:text="${recipe.getInstructions()}"></p>
+
+    <h3>Rating</h3>
+    <p class="rating">★★★★☆</p>
+
+    <h3>Comments</h3>
+    <ul class="comment-list">
+        <li>"Loved this recipe!" - Foodie89</li>
+        <li th:each="comment: ${recipe.getComments()}">"<span th:text="${comment.getText()}"></span>" - <span th:text="${comment.getUser().getUsername()}"></span></li>
+    </ul>
+
+    <form class="comment-form">
+        <textarea placeholder="Add a comment..."></textarea>
+        <input type="submit" value="Post Comment">
+    </form>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2024 Recipedia</p>
+</footer>
+
+</body>
+</html>
