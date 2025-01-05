@@ -12,6 +12,8 @@ import de.fhdo.Recipedia.service.CommentService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 
@@ -40,7 +42,7 @@ public class CommentServiceImpl implements CommentService {
         }
 
         Comment comment = commentConverter.toEntity(commentDto);
-        comment.setCreationDate(new Date());
+        comment.setCreationTime(Timestamp.from(Instant.now()));
         comment.setUser(user);
         comment.setRecipe(recipe);
 
@@ -73,7 +75,7 @@ public class CommentServiceImpl implements CommentService {
             return null;
         }
 
-        List<Comment> comments = commentRepository.findByRecipeOrderByCreationDateDesc(recipe);
+        List<Comment> comments = commentRepository.findByRecipeOrderByCreationTimeDesc(recipe);
 
 
         return comments.stream().map(commentConverter::toDto).toList();

@@ -12,7 +12,7 @@ public class CommentConverter {
 
         commentDto.setCommentId(comment.getCommentId());
         commentDto.setText(comment.getText());
-        commentDto.setCreationDate(comment.getCreationDate());
+        commentDto.setCreationTime(comment.getCreationTime());
         commentDto.getUser().setUserId(comment.getUser().getUserId());
         commentDto.getUser().setUsername(comment.getUser().getUsername());
         commentDto.setRecipeId(comment.getRecipe().getRecipeId());

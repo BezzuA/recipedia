@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
@@ -20,8 +21,8 @@ public class Reply {
 
     private String text;
 
-    @Temporal(TemporalType.DATE)
-    private Date creationDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Timestamp creationTime;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

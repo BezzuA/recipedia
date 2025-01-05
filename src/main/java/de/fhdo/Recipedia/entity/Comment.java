@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
@@ -21,7 +22,7 @@ public class Comment {
     private String text;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Date creationDate;
+    private Timestamp creationTime;
 
     // Relationships
     @ManyToOne

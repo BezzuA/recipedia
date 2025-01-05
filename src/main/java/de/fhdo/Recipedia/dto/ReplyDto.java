@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 
 /**
@@ -16,7 +17,7 @@ import java.util.Date;
 public class ReplyDto implements Serializable {
     private Long replyId;
     private String text;
-    private Date creationDate;
+    private Timestamp creationTime;
     private UserDto user = new UserDto();
     private Long discussionId;
 }

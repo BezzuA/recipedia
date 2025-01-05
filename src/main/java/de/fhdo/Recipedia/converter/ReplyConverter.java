@@ -12,7 +12,7 @@ public class ReplyConverter {
 
         replyDto.setReplyId(reply.getReplyId());
         replyDto.setText(reply.getText());
-        replyDto.setCreationDate(reply.getCreationDate());
+        replyDto.setCreationTime(reply.getCreationTime());
         replyDto.setDiscussionId(reply.getDiscussion().getDiscussionId());
 
         replyDto.getUser().setUserId(reply.getUser().getUserId());

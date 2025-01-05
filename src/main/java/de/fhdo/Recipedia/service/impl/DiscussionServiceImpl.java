@@ -102,7 +102,7 @@ public class DiscussionServiceImpl implements DiscussionService {
     private List<DiscussionDto> addRepliesCount(List<Discussion> discussions) {
         return discussions.stream().map(discussion -> {
             DiscussionDto discussionDto = discussionConverter.toDto(discussion);
-            int repliesCount = replyRepository.findByDiscussionOrderByCreationDateDesc(discussion).size();
+            int repliesCount = replyRepository.findByDiscussionOrderByCreationTimeDesc(discussion).size();
 
             discussionDto.setRepliesCount(repliesCount);
 

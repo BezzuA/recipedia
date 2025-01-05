@@ -12,6 +12,8 @@ import de.fhdo.Recipedia.service.ReplyService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 
@@ -43,7 +45,7 @@ public class ReplyServiceImpl implements ReplyService {
         }
 
         Reply reply = replyConverter.toEntity(replyDto);
-        reply.setCreationDate(new Date());
+        reply.setCreationTime(Timestamp.from(Instant.now()));
         reply.setUser(user);
         reply.setDiscussion(discussion);
 
