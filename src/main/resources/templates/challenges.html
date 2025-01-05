@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipedia: Challenges</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+
+<header>
+    <h1>Recipedia</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a th:href="@{/trendy_recipes}">Trendy Recipes</a>
+    <a th:href="@{/challenges}" class="selectedNav">Challenges</a>
+    <a th:href="@{/discussions}" >Discussion</a>
+    <a href="create_recipe.html">Create Recipe</a>
+    <a th:href="@{/account}" style="float: right;">Account</a>
+</nav>
+
+<div class="container">
+    <h2>Official Challenges</h2>
+
+    <div class="post" th:each="challenge: ${challenges}">
+        <h4 th:text="${challenge.getTitle()}"></h4>
+        <p><strong>Start Date: </strong><span th:text="${challenge.getStartDate()}"></span></p>
+        <p><strong>End Date: </strong><span th:text="${challenge.getEndDate()}"></span></p>
+        <p th:text="${challenge.getDescription()}"></p>
+        <a th:href="@{/challenge/{id}(id=${challenge.getChallengeId()})}">View Joined Recipes (<span th:text="${challenge.getNumberOfRecipes()}"></span>)</a>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2024 Recipedia</p>
+</footer>
+
+</body>
+</html>

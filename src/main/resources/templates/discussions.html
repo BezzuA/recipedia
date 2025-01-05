@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipedia: Discussions</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+    <style>
+        .discussion-form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Recipedia</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a th:href="@{/trendy_recipes}">Trendy Recipes</a>
+    <a th:href="@{/challenges}">Challenges</a>
+    <a th:href="@{/discussions}" class="selectedNav">Discussion</a>
+    <a href="create_recipe.html">Create Recipe</a>
+    <a th:href="@{/account}" style="float: right;">Account</a>
+</nav>
+
+<div class="container">
+    <h2>Community Discussions</h2>
+
+    <div class="post" th:each="discussion: ${discussions}">
+        <h4 th:text="${discussion.getTitle()}"></h4>
+        <p>Posted by <strong th:text="${discussion.getUser().getUsername()}"></strong> on <span th:text="${discussion.getCreationDate()}"></span></p>
+        <p th:text="${discussion.getDescription()}"></p>
+        <a th:href="@{/discussion/{id}(id=${discussion.getDiscussionId()})}">View Replies (<span th:text="${discussion.getRepliesCount()}"></span>)</a>
+    </div>
+
+    <form class="discussion-form">
+        <h3>Start a New Discussion</h3>
+        <label for="discussion-title">Title:</label>
+        <input type="text" id="discussion-title" name="discussion-title"
+               placeholder="Enter discussion title" required>
+
+        <label for="discussion-content">Content:</label>
+        <textarea id="discussion-content" name="discussion-content"
+                  placeholder="What's on your mind?" required></textarea>
+
+        <input type="submit" value="Post Discussion">
+    </form>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2024 Recipedia</p>
+</footer>
+
+</body>
+</html>

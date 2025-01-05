@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipedia: Current Challenge</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+
+<header>
+    <h1>Recipedia</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a th:href="@{/trendy_recipes}">Trendy Recipes</a>
+    <a th:href="@{/challenges}" class="selectedNav">Challenges</a>
+    <a th:href="@{/discussions}">Discussion</a>
+    <a href="create_recipe.html">Create Recipe</a>
+    <a th:href="@{/account}" style="float: right;">Account</a>
+</nav>
+
+<div class="container">
+    <h2 th:text="${challenge.getTitle()}"></h2>
+    <p><strong>Goals:</strong> <span th:text="${challenge.getDescription()}"></span></p>
+
+    <h3>Recipes</h3>
+    <ul class="recipe-list">
+        <li th:each="recipe: ${recipes}"><a th:href="@{/recipe/{id}(id=${recipe.getRecipeId()})}"><span th:text="${recipe.getTitle()}"></span></a></li>
+    </ul>
+
+</div>
+
+<footer class="footer">
+    <p>&copy; 2024 Recipedia</p>
+</footer>
+
+</body>
+</html>

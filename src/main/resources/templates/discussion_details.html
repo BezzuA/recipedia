@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipedia: Discussion Thread</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+
+<header>
+    <h1>Recipedia</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a th:href="@{/trendy_recipes}">Trendy Recipes</a>
+    <a th:href="@{/challenges}">Challenges</a>
+    <a th:href="@{/discussions}" class="selectedNav">Discussion</a>
+    <a href="create_recipe.html">Create Recipe</a>
+    <a th:href="@{/account}" style="float: right;">Account</a>
+</nav>
+
+<div class="container">
+    <h2 th:text="${discussion.getTitle()}"></h2>
+    <p>Posted by <strong th:text="${discussion.getUser().getUsername()}">UserB</strong> on <span th:text="${discussion.getCreationDate()}"></span></p>
+    <p th:text="${discussion.getDescription()}"></p>
+
+    <h3>Replies</h3>
+    <div class="post" th:each="reply: ${replies}">
+        <p><strong th:text="${reply.getUser().getUsername()}"></strong> says:</p>
+        <p th:text="${reply.getText()}"></p>
+    </div>
+
+    <form class="discussion-form">
+        <h3>Reply to this Discussion</h3>
+        <label>
+            <textarea placeholder="Write your reply here..." required></textarea>
+        </label>
+        <input type="submit" value="Post Reply">
+    </form>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2024 Recipedia</p>
+</footer>
+
+</body>
+</html>
