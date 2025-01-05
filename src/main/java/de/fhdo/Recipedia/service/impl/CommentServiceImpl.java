@@ -73,7 +73,7 @@ public class CommentServiceImpl implements CommentService {
             return List.of();
         }
 
-        List<Comment> comments = commentRepository.findByRecipe(recipe);
+        List<Comment> comments = commentRepository.findByRecipeOrderByCreationDateDesc(recipe);
 
 
         return comments.stream().map(commentConverter::toDto).toList();

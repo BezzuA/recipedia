@@ -13,4 +13,5 @@ public interface RecipeService {
     List<RecipeDto> getRecipesByCategory(String category);
     List<RecipeDto> getRecipesByAuthor(Long authorId);
     List<RecipeDto> getRecipesByChallenge(Long challengeId);
+    List<RecipeDto> getMostViewedRecipes();
 }

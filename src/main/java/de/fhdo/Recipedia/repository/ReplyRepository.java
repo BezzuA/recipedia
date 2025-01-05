@@ -8,5 +8,5 @@ import java.util.Collection;
 import java.util.List;
 
 public interface ReplyRepository extends JpaRepository<Reply, Long> {
-    List<Reply> findByDiscussion(Discussion discussion);
+    List<Reply> findByDiscussionOrderByCreationDateDesc(Discussion discussion);
 }

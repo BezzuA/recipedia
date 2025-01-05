@@ -145,7 +145,7 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     @Transactional
     public List<RecipeDto> getRecipesByCategory(String category) {
-        List<Recipe> recipes = recipeRepository.findByCategory(category);
+        List<Recipe> recipes = recipeRepository.findByCategoryOrderByCreationDateDesc(category);
 
         return addAverageRatingToRecipeDtos(recipes);
     }
@@ -159,7 +159,7 @@ public class RecipeServiceImpl implements RecipeService {
             return List.of();
         }
 
-        List<Recipe> recipes = recipeRepository.findByAuthor(author);
+        List<Recipe> recipes = recipeRepository.findByAuthorOrderByCreationDateDesc(author);
 
 
         return addAverageRatingToRecipeDtos(recipes);
@@ -176,6 +176,13 @@ public class RecipeServiceImpl implements RecipeService {
 
         List<Recipe> recipes = challenge.getRecipes();
 
+
+        return addAverageRatingToRecipeDtos(recipes);
+    }
+
+    @Override
+    public List<RecipeDto> getMostViewedRecipes() {
+        List<Recipe> recipes = recipeRepository.findAllByOrderByViewCountDesc();
 
         return addAverageRatingToRecipeDtos(recipes);
     }

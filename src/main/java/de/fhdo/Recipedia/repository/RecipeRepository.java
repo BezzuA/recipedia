@@ -7,9 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {
-    List<Recipe> findByCategory(String category);
-    List<Recipe> findByAuthor(User author);
-
+    List<Recipe> findByCategoryOrderByCreationDateDesc(String category);
+    List<Recipe> findByAuthorOrderByCreationDateDesc(User author);
     List<Recipe> findByTitleContainingIgnoreCase(String keyword);
+    List<Recipe> findAllByOrderByViewCountDesc();
 
 }

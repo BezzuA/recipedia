@@ -80,11 +80,11 @@ public class DiscussionServiceImpl implements DiscussionService {
     @Override
     @Transactional
     public List<DiscussionDto> getDiscussions() {
-        List<Discussion> discussions = discussionRepository.findAll();
+        List<Discussion> discussions = discussionRepository.findAllByOrderByCreationDateDesc();
 
         List<DiscussionDto> discussionDtos = discussions.stream().map(discussion -> {
             DiscussionDto discussionDto = discussionConverter.toDto(discussion);
-            int repliesCount = replyRepository.findByDiscussion(discussion).size();
+            int repliesCount = replyRepository.findByDiscussionOrderByCreationDateDesc(discussion).size();
 
             discussionDto.setRepliesCount(repliesCount);
 

@@ -3,8 +3,6 @@ package de.fhdo.Recipedia.service.impl;
 import de.fhdo.Recipedia.converter.ChallengeConverter;
 import de.fhdo.Recipedia.dto.ChallengeDto;
 import de.fhdo.Recipedia.entity.Challenge;
-import de.fhdo.Recipedia.entity.Comment;
-import de.fhdo.Recipedia.entity.Rating;
 import de.fhdo.Recipedia.entity.Recipe;
 import de.fhdo.Recipedia.repository.ChallengeRepository;
 import de.fhdo.Recipedia.repository.RecipeRepository;
@@ -107,7 +105,7 @@ public class ChallengeServiceImpl implements ChallengeService {
     @Override
     @Transactional
     public List<ChallengeDto> getChallenges() {
-        List<Challenge> challenges = challengeRepository.findAll();
+        List<Challenge> challenges = challengeRepository.findAllByOrderByEndDateDesc();
 
         return challenges.stream().map(challengeConverter::toDto).toList();
     }
