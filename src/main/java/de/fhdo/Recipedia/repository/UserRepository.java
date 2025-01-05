@@ -1,12 +1,8 @@
 package de.fhdo.Recipedia.repository;
 
-import de.fhdo.Recipedia.model.User;
-
-import java.util.Optional;
-
+import de.fhdo.Recipedia.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, String> {
-
-	Optional<User> findByUsername(String username);
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByUsername(String username);
 }
