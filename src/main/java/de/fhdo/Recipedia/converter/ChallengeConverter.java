@@ -15,7 +15,7 @@ public class ChallengeConverter {
         challengeDto.setDescription(challenge.getDescription());
         challengeDto.setStartDate(challenge.getStartDate());
         challengeDto.setEndDate(challenge.getEndDate());
-        challengeDto.setUserIds(challenge.getUsers().stream().map(user -> user.getUserId()).toList());
+        challengeDto.setNumberOfRecipes(challenge.getRecipes().size());
 
         return challengeDto;
     }

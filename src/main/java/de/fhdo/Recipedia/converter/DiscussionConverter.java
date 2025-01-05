@@ -13,7 +13,7 @@ public class DiscussionConverter {
         discussionDto.setDiscussionId(discussion.getDiscussionId());
         discussionDto.setTitle(discussion.getTitle());
         discussionDto.setDescription(discussion.getDescription());
-        discussion.setCreationDate(discussion.getCreationDate());
+        discussionDto.setCreationDate(discussion.getCreationDate());
         discussionDto.setRepliesCount(discussion.getReplies().size());
 
         discussionDto.getUser().setUserId(discussion.getUser().getUserId());
