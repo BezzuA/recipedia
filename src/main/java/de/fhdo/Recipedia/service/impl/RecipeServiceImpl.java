@@ -156,7 +156,7 @@ public class RecipeServiceImpl implements RecipeService {
         User author = userRepository.findById(authorId).orElse(null);
 
         if (author == null) {
-            return List.of();
+            return null;
         }
 
         List<Recipe> recipes = recipeRepository.findByAuthorOrderByCreationDateDesc(author);
@@ -171,7 +171,7 @@ public class RecipeServiceImpl implements RecipeService {
         Challenge challenge = challengeRepository.findById(challengeId).orElse(null);
 
         if (challenge == null) {
-            return List.of();
+            return null;
         }
 
         List<Recipe> recipes = challenge.getRecipes();
@@ -181,6 +181,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
+    @Transactional
     public List<RecipeDto> getMostViewedRecipes() {
         List<Recipe> recipes = recipeRepository.findAllByOrderByViewCountDesc();
 

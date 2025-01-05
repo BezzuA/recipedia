@@ -4,8 +4,10 @@ import de.fhdo.Recipedia.converter.ChallengeConverter;
 import de.fhdo.Recipedia.dto.ChallengeDto;
 import de.fhdo.Recipedia.entity.Challenge;
 import de.fhdo.Recipedia.entity.Recipe;
+import de.fhdo.Recipedia.entity.User;
 import de.fhdo.Recipedia.repository.ChallengeRepository;
 import de.fhdo.Recipedia.repository.RecipeRepository;
+import de.fhdo.Recipedia.repository.UserRepository;
 import de.fhdo.Recipedia.service.ChallengeService;
 import de.fhdo.Recipedia.service.RatingService;
 import jakarta.transaction.Transactional;
@@ -19,17 +21,23 @@ import java.util.List;
 public class ChallengeServiceImpl implements ChallengeService {
     private final ChallengeRepository challengeRepository;
     private final RecipeRepository recipeRepository;
+    private final UserRepository userRepository;
+
     private final ChallengeConverter challengeConverter;
 
     private final RatingService ratingService;
 
     public ChallengeServiceImpl(ChallengeRepository challengeRepository,
                                 RecipeRepository recipeRepository,
+                                UserRepository userRepository,
                                 ChallengeConverter challengeConverter,
                                 RatingService ratingService) {
         this.challengeRepository = challengeRepository;
         this.recipeRepository = recipeRepository;
+        this.userRepository = userRepository;
+
         this.challengeConverter = challengeConverter;
+
         this.ratingService = ratingService;
     }
 
@@ -128,6 +136,20 @@ public class ChallengeServiceImpl implements ChallengeService {
 
 
         return challengeConverter.toDto(challenge);
+    }
+
+    @Override
+    @Transactional
+    public List<ChallengeDto> getChallengesByUserId(Long userId) {
+        User user = userRepository.findById(userId).orElse(null);
+
+        if (user == null) {
+            return null;
+        }
+
+        List<Challenge> challenges = challengeRepository.findChallengesByUserIdOrderByEndDateAsc(userId);
+
+        return challenges.stream().map(challengeConverter::toDto).toList();
     }
 
     @Override

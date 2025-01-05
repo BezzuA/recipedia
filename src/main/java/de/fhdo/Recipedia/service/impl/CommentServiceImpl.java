@@ -70,7 +70,7 @@ public class CommentServiceImpl implements CommentService {
         Recipe recipe = recipeRepository.findById(recipeId).orElse(null);
 
         if(recipe == null) {
-            return List.of();
+            return null;
         }
 
         List<Comment> comments = commentRepository.findByRecipeOrderByCreationDateDesc(recipe);

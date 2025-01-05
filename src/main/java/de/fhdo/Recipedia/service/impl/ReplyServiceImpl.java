@@ -72,7 +72,7 @@ public class ReplyServiceImpl implements ReplyService {
         Discussion discussion = discussionRepository.findById(discussionId).orElse(null);
 
         if (discussion == null) {
-            return List.of();
+            return null;
         }
 
         List<Reply> replies = discussion.getReplies();

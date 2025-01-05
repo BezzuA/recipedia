@@ -82,7 +82,25 @@ public class DiscussionServiceImpl implements DiscussionService {
     public List<DiscussionDto> getDiscussions() {
         List<Discussion> discussions = discussionRepository.findAllByOrderByCreationDateDesc();
 
-        List<DiscussionDto> discussionDtos = discussions.stream().map(discussion -> {
+        return addRepliesCount(discussions);
+    }
+
+    @Override
+    @Transactional
+    public List<DiscussionDto> getDiscussionsByUser(Long userId) {
+        User user = userRepository.findById(userId).orElse(null);
+
+        if (user == null) {
+            return null;
+        }
+
+        List<Discussion> discussions = discussionRepository.findByUserOrderByCreationDateDesc(user);
+
+        return addRepliesCount(discussions);
+    }
+
+    private List<DiscussionDto> addRepliesCount(List<Discussion> discussions) {
+        return discussions.stream().map(discussion -> {
             DiscussionDto discussionDto = discussionConverter.toDto(discussion);
             int repliesCount = replyRepository.findByDiscussionOrderByCreationDateDesc(discussion).size();
 
@@ -90,7 +108,5 @@ public class DiscussionServiceImpl implements DiscussionService {
 
             return discussionDto;
         }).toList();
-
-        return discussionDtos;
     }
 }

@@ -15,9 +15,6 @@ public class UserConverter {
         userDto.setUsername(user.getUsername());
         userDto.setEmail(user.getEmail());
         userDto.setBio(user.getBio());
-        userDto.setRecipeIds(user.getRecipes().stream().map(recipe -> recipe.getRecipeId()).toList());
-        userDto.setDiscussionIds(user.getDiscussions().stream().map(discussion -> discussion.getDiscussionId()).toList());
-        userDto.setChallengeIds(user.getChallenges().stream().map(challenge -> challenge.getChallengeId()).toList());
 
         return userDto;
     }

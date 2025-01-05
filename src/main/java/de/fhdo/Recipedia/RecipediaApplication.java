@@ -135,6 +135,10 @@ public class RecipediaApplication implements CommandLineRunner {
 		List<RecipeDto> authorRecipes = recipeService.getRecipesByAuthor(testUser.getUserId());
 		System.out.println("Found recipes by author: " + authorRecipes.size());
 		
+		// Get most viewed recipes
+		List<RecipeDto> mostViewedRecipes = recipeService.getMostViewedRecipes();
+		System.out.println("Most viewed recipes count: " + mostViewedRecipes.size());
+		
 		// Delete recipe
 		Boolean recipeDeleted = recipeService.deleteRecipe(createdRecipe.getRecipeId());
 		System.out.println("Recipe deleted: " + recipeDeleted);
@@ -236,6 +240,10 @@ public class RecipediaApplication implements CommandLineRunner {
 		// Get all discussions
 		List<DiscussionDto> allDiscussions = discussionService.getDiscussions();
 		System.out.println("Total discussions: " + allDiscussions.size());
+		
+		// Get discussions by user
+		List<DiscussionDto> userDiscussions = discussionService.getDiscussionsByUser(discussionCreator.getUserId());
+		System.out.println("User's discussions count: " + userDiscussions.size());
 		
 		// Delete discussion
 		Boolean discussionDeleted = discussionService.deleteDiscussion(createdDiscussion.getDiscussionId());
@@ -340,6 +348,10 @@ public class RecipediaApplication implements CommandLineRunner {
 		// Clean up
 		Boolean challengeDeleted = challengeService.deleteChallenge(createdChallenge.getChallengeId());
 		System.out.println("Challenge deleted: " + challengeDeleted);
+		
+		// Get challenges by user
+		List<ChallengeDto> userChallenges = challengeService.getChallengesByUserId(participant.getUserId());
+		System.out.println("User's challenges count: " + userChallenges.size());
 		
 		System.out.println("ChallengeService tests completed.");
 	}

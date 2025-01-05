@@ -10,7 +10,8 @@ public interface ChallengeService {
     Boolean deleteChallenge(Long challengeId);
     ChallengeDto updateChallenge(ChallengeDto challengeDto);
     ChallengeDto getChallenge(Long challengeId);
-    List<ChallengeDto> getChallenges();
     ChallengeDto joinChallenge(Long challengeId, Long recipeId);
+    List<ChallengeDto> getChallengesByUserId(Long userId);
+    List<ChallengeDto> getChallenges();
     List<Recipe> getWinnerRecipesByChallengeId(Long challengeId);
 }

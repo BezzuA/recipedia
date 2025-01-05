@@ -18,7 +18,4 @@ public class UserDto implements Serializable {
     private String username;
     private String email;
     private String bio;
-    private List<Long> recipeIds;
-    private List<Long> discussionIds;
-    private List<Long> challengeIds;
 }

@@ -9,4 +9,5 @@ public interface DiscussionService {
     Boolean deleteDiscussion(Long discussionId);
     DiscussionDto getDiscussion(Long discussionId);
     List<DiscussionDto> getDiscussions();
+    List<DiscussionDto> getDiscussionsByUser(Long userId);
 }

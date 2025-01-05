@@ -43,7 +43,6 @@ public class UserServiceImpl implements UserService {
         user.setPassword(password);
         userRepository.save(user);
 
-
         return userConverter.toDto(user);
     }
 
