@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class CommentServiceImpl implements CommentService {
         }
 
         Comment comment = commentConverter.toEntity(commentDto);
-        comment.setCreationTime(Timestamp.from(Instant.now()));
+        comment.setCreationTime(Timestamp.from(Instant.now().truncatedTo(ChronoUnit.SECONDS)));
         comment.setUser(user);
         comment.setRecipe(recipe);
 

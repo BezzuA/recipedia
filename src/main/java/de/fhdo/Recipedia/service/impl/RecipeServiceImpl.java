@@ -110,6 +110,13 @@ public class RecipeServiceImpl implements RecipeService {
 
         RecipeDto recipeDto = recipeConverter.toDto(recipe);
 
+        if (userId == null) {
+            recipeDto.setIsRated(false);
+            recipeDto.setAverageRating(ratingService.getAverageRating(recipeId));
+
+            return recipeDto;
+        }
+
         User user = userRepository.findById(userId).orElse(null);
 
         if (user != null) {

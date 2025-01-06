@@ -110,7 +110,19 @@ INSERT INTO ratings (score, recipe_id, user_id) VALUES
 (5, 9, 1),
 (5, 10, 5),
 (4, 11, 6),
-(5, 12, 4);
+(5, 12, 4),
+(4, 3, 4),
+(5, 3, 5),
+(4, 3, 6),
+(5, 3, 2),
+(5, 9, 2),
+(4, 9, 3),
+(5, 9, 4),
+(5, 9, 5),
+(5, 10, 2),
+(4, 10, 3),
+(5, 10, 4),
+(4, 10, 6);
 
 -- Discussions
 INSERT INTO discussions (title, description, creation_date, user_id) VALUES

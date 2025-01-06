@@ -1,7 +1,9 @@
 package de.fhdo.Recipedia.service.impl;
 
 import de.fhdo.Recipedia.converter.ChallengeConverter;
+import de.fhdo.Recipedia.converter.RecipeConverter;
 import de.fhdo.Recipedia.dto.ChallengeDto;
+import de.fhdo.Recipedia.dto.RecipeDto;
 import de.fhdo.Recipedia.entity.Challenge;
 import de.fhdo.Recipedia.entity.Recipe;
 import de.fhdo.Recipedia.entity.User;
@@ -24,6 +26,7 @@ public class ChallengeServiceImpl implements ChallengeService {
     private final UserRepository userRepository;
 
     private final ChallengeConverter challengeConverter;
+    private final RecipeConverter recipeConverter;
 
     private final RatingService ratingService;
 
@@ -31,12 +34,14 @@ public class ChallengeServiceImpl implements ChallengeService {
                                 RecipeRepository recipeRepository,
                                 UserRepository userRepository,
                                 ChallengeConverter challengeConverter,
+                                RecipeConverter recipeConverter,
                                 RatingService ratingService) {
         this.challengeRepository = challengeRepository;
         this.recipeRepository = recipeRepository;
         this.userRepository = userRepository;
 
         this.challengeConverter = challengeConverter;
+        this.recipeConverter = recipeConverter;
 
         this.ratingService = ratingService;
     }
@@ -72,7 +77,13 @@ public class ChallengeServiceImpl implements ChallengeService {
             recipeRepository.save(recipe);
         }
 
+        for(User user : challenge.getUsers()) {
+            user.getChallenges().remove(challenge);
+            userRepository.save(user);
+        }
+
         challenge.getRecipes().clear();
+        challenge.getUsers().clear();
 
         challengeRepository.delete(challenge);
 
@@ -128,6 +139,10 @@ public class ChallengeServiceImpl implements ChallengeService {
             return null;
         }
 
+        if(recipe.getChallenge() != null) {
+            return null;
+        }
+
         challenge.getRecipes().add(recipe);
         recipe.setChallenge(challenge);
 
@@ -154,7 +169,7 @@ public class ChallengeServiceImpl implements ChallengeService {
 
     @Override
     @Transactional
-    public List<Recipe> getWinnerRecipesByChallengeId(Long challengeId) {
+    public List<RecipeDto> getWinnerRecipesByChallengeId(Long challengeId) {
         Challenge challenge = challengeRepository.findById(challengeId).orElse(null);
 
         if (challenge == null) {
@@ -187,6 +202,6 @@ public class ChallengeServiceImpl implements ChallengeService {
             }
         }
 
-        return winnerRecipes;
+        return winnerRecipes.stream().map(recipeConverter::toDto).toList();
     }
 }

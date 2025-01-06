@@ -41,6 +41,10 @@ public class RatingServiceImpl implements RatingService {
             return null;
         }
 
+        if(ratingDto.getScore() < 1 || ratingDto.getScore() > 5) {
+            return null;
+        }
+
         Rating rating = ratingConverter.toEntity(ratingDto);
         Rating existingRating = ratingRepository.findByUserAndRecipe(user, recipe);
 

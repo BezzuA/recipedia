@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
 
@@ -45,7 +46,7 @@ public class ReplyServiceImpl implements ReplyService {
         }
 
         Reply reply = replyConverter.toEntity(replyDto);
-        reply.setCreationTime(Timestamp.from(Instant.now()));
+        reply.setCreationTime(Timestamp.from(Instant.now().truncatedTo(ChronoUnit.SECONDS)));
         reply.setUser(user);
         reply.setDiscussion(discussion);
 

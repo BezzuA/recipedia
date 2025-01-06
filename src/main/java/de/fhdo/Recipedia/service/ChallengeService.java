@@ -1,6 +1,7 @@
 package de.fhdo.Recipedia.service;
 
 import de.fhdo.Recipedia.dto.ChallengeDto;
+import de.fhdo.Recipedia.dto.RecipeDto;
 import de.fhdo.Recipedia.entity.Recipe;
 
 import java.util.List;
@@ -13,5 +14,5 @@ public interface ChallengeService {
     ChallengeDto joinChallenge(Long challengeId, Long recipeId);
     List<ChallengeDto> getChallengesByUserId(Long userId);
     List<ChallengeDto> getChallenges();
-    List<Recipe> getWinnerRecipesByChallengeId(Long challengeId);
+    List<RecipeDto> getWinnerRecipesByChallengeId(Long challengeId);
 }

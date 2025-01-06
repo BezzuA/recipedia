@@ -33,6 +33,6 @@ public class Challenge {
     @OneToMany(mappedBy = "challenge", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Recipe> recipes = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "challenges")
+    @ManyToMany(mappedBy = "challenges", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<User> users = new ArrayList<>();
 }
