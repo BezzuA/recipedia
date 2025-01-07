@@ -48,16 +48,6 @@ public class UserResolver {
     }
 
     @MutationMapping
-    public UserDto register(@Argument String username, @Argument String password) {
-        return userService.register(username, password);
-    }
-
-    @MutationMapping
-    public UserDto login(@Argument String username, @Argument String password) {
-        return userService.login(username, password);
-    }
-
-    @MutationMapping
     public UserDto updateUser(
             @Argument Long userId,
             @Argument String username,
