@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipedia: My Account</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Recipedia</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="trendy_recipes.html">Trendy Recipes</a>
+    <a href="challenges.html">Challenges</a>
+    <a href="discussions.html">Discussion</a>
+    <a href="create_recipe.html">Create Recipe</a>
+    <a href="account.html" class="selectedNav" style="float: right;">Account</a>
+</nav>
+
+<div class="container">
+    <h2>My Account</h2>
+
+    <!-- We'll populate these fields with JavaScript -->
+    <h3 id="account-username"></h3>
+    <p id="account-email"></p>
+    <p id="account-bio"></p>
+
+    <h3>My Recipes</h3>
+    <ul id="my-recipes-list" class="recipe-list">
+        <!-- JavaScript will insert <li> elements here -->
+    </ul>
+
+    <h3>My Discussion</h3>
+    <ul id="my-discussions-list" class="discussion-list">
+        <!-- Insert <li> elements via JS -->
+    </ul>
+
+    <h3>My Challenges</h3>
+    <ul id="my-challenges-list" class="challenge-list">
+        <!-- Insert <li> elements via JS -->
+    </ul>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2024 Recipedia</p>
+</footer>
+
+<!-- JavaScript goes at the end -->
+<script src="js/account.js"></script>
+</body>
+</html>

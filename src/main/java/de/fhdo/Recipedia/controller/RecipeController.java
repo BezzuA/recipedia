@@ -78,6 +78,13 @@ public class RecipeController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping("/trendy")
+    public ResponseEntity<List<RecipeDto>> getTrendyRecipes() {
+        // Return an array/list of RecipeDto
+        // Possibly calling recipeService.getTrendyRecipes()
+        return ResponseEntity.ok(recipeService.getTrendyRecipes());
+    }
+
     @GetMapping(
             path = "/{recipeId}/average_rating",
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}

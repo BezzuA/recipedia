@@ -58,6 +58,18 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping("/me")
+    public ResponseEntity<UserDto> getCurrentUser() {
+        // Example: Hardcode user ID 1, or get from security context
+        Long userId = 1L;
+        UserDto userDto = userService.getUserById(userId);
+        if (userDto == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(userDto);
+    }
+
+
 
     @GetMapping(
             path = "/{authorId}/recipes",
@@ -68,6 +80,14 @@ public class UserController {
         List<RecipeDto> recipes = recipeService.getRecipesByAuthor(authorId);
         return new ResponseEntity<>(recipes, HttpStatus.OK);
     }
+
+    @GetMapping("/me/recipes")
+    public ResponseEntity<List<RecipeDto>> getRecipesForCurrentUser() {
+        Long userId = 1L; // or from security
+        List<RecipeDto> recipes = recipeService.getRecipesByAuthor(userId);
+        return ResponseEntity.ok(recipes);
+    }
+
 
     @GetMapping(
             path = "/{userId}/discussions",

@@ -197,6 +197,11 @@ public class RecipeServiceImpl implements RecipeService {
         return addAverageRatingToRecipeDtos(recipes);
     }
 
+    @Override
+    public List<RecipeDto> getTrendyRecipes() {
+        return List.of();
+    }
+
 
     private List<RecipeDto> addAverageRatingToRecipeDtos(List<Recipe> recipes) {
         List<RecipeDto> recipeDtos = recipes.stream().map(recipeConverter::toDto).toList();

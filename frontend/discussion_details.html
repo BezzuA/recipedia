@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipedia: Discussion Thread</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Recipedia</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="trendy_recipes.html">Trendy Recipes</a>
+    <a href="challenges.html">Challenges</a>
+    <a href="discussions.html" class="selectedNav">Discussion</a>
+    <a href="create_recipe.html">Create Recipe</a>
+    <a href="account.html" style="float: right;">Account</a>
+</nav>
+
+<div class="container">
+    <!-- We'll fill these fields via JS -->
+    <h2 id="discussion-title"></h2>
+    <p>
+        Posted by <strong id="discussion-username">UserB</strong> on <span id="discussion-date"></span>
+    </p>
+    <p id="discussion-description"></p>
+
+    <h3>Replies</h3>
+    <div id="discussion-replies"></div>
+
+    <form class="discussion-form" id="reply-form">
+        <h3>Reply to this Discussion</h3>
+        <label>
+            <textarea id="reply-text" placeholder="Write your reply here..." required></textarea>
+        </label>
+        <input type="submit" value="Post Reply">
+    </form>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2024 Recipedia</p>
+</footer>
+
+<script src="js/discussion_details.js"></script>
+</body>
+</html>

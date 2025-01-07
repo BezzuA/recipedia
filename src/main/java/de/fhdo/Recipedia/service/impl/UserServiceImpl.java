@@ -141,4 +141,9 @@ public class UserServiceImpl implements UserService {
 
         return challenge.getUsers().stream().map(userConverter::toDto).toList();
     }
+
+    @Override
+    public UserDto getUserById(Long userId) {
+        return null;
+    }
 }
