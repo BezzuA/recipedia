@@ -38,13 +38,4 @@ public class ReplyController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-
-    @GetMapping(
-        path = "/discussion/{discussionId}",
-        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
-    )
-    public ResponseEntity<List<ReplyDto>> getRepliesByDiscussion(@PathVariable Long discussionId) {
-        List<ReplyDto> replies = replyService.getRepliesByDiscussion(discussionId);
-        return new ResponseEntity<>(replies, HttpStatus.OK);
-    }
 }

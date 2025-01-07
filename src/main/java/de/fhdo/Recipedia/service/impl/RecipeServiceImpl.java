@@ -15,6 +15,7 @@ import de.fhdo.Recipedia.service.RecipeService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -136,23 +137,22 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     @Transactional
-    public List<RecipeDto> getRecipes(String keyword) {
+    public List<RecipeDto> getRecipes(String keyword, String category) {
+        List<Recipe> recipes = new ArrayList<>();
+
         if(keyword == null || keyword.isEmpty()) {
-            List<Recipe> recipes = recipeRepository.findAll();
-
-            return recipes.stream().map(recipeConverter::toDto).toList();
+            if(category == null || category.isEmpty()) {
+                recipes = recipeRepository.findAll();
+            } else {
+                recipes = recipeRepository.findByCategoryOrderByCreationDateDesc(category);
+            }
+        }else {
+            if(category == null || category.isEmpty()) {
+                recipes = recipeRepository.findByTitleContainingIgnoreCase(keyword);
+            } else {
+                recipes = recipeRepository.findByTitleContainingIgnoreCaseAndCategoryOrderByCreationDateDesc(keyword, category);
+            }
         }
-
-        List<Recipe> recipes = recipeRepository.findByTitleContainingIgnoreCase(keyword);
-
-
-        return addAverageRatingToRecipeDtos(recipes);
-    }
-
-    @Override
-    @Transactional
-    public List<RecipeDto> getRecipesByCategory(String category) {
-        List<Recipe> recipes = recipeRepository.findByCategoryOrderByCreationDateDesc(category);
 
         return addAverageRatingToRecipeDtos(recipes);
     }

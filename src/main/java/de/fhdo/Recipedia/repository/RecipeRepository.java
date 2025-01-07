@@ -10,6 +10,7 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
     List<Recipe> findByCategoryOrderByCreationDateDesc(String category);
     List<Recipe> findByAuthorOrderByCreationDateDesc(User author);
     List<Recipe> findByTitleContainingIgnoreCase(String keyword);
+    List<Recipe> findByTitleContainingIgnoreCaseAndCategoryOrderByCreationDateDesc(String keyword, String category);
     List<Recipe> findAllByOrderByViewCountDesc();
 
 }

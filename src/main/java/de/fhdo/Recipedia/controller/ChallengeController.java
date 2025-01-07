@@ -3,6 +3,7 @@ package de.fhdo.Recipedia.controller;
 import de.fhdo.Recipedia.dto.ChallengeDto;
 import de.fhdo.Recipedia.dto.RecipeDto;
 import de.fhdo.Recipedia.service.ChallengeService;
+import de.fhdo.Recipedia.service.RecipeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +15,12 @@ import java.util.List;
 @RequestMapping("/api/challenges")
 public class ChallengeController {
     private final ChallengeService challengeService;
+    private final RecipeService recipeService;
 
-    public ChallengeController(ChallengeService challengeService) {
+    public ChallengeController(ChallengeService challengeService,
+                               RecipeService recipeService) {
         this.challengeService = challengeService;
+        this.recipeService = recipeService;
     }
 
     @PostMapping(
@@ -43,7 +47,7 @@ public class ChallengeController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping(
+    @PatchMapping(
         path = "/{challengeId}",
         produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
         consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
@@ -68,6 +72,16 @@ public class ChallengeController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping(
+            path = "/{challengeId}/recipes",
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+    )
+    public ResponseEntity<List<RecipeDto>> getRecipesByChallenge(
+            @PathVariable Long challengeId) {
+        List<RecipeDto> recipes = recipeService.getRecipesByChallenge(challengeId);
+        return new ResponseEntity<>(recipes, HttpStatus.OK);
+    }
+
     @PostMapping(
         path = "/{challengeId}/join",
         produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
@@ -80,15 +94,6 @@ public class ChallengeController {
             return new ResponseEntity<>(challenge, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-    }
-
-    @GetMapping(
-        path = "/user/{userId}",
-        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
-    )
-    public ResponseEntity<List<ChallengeDto>> getChallengesByUser(@PathVariable Long userId) {
-        List<ChallengeDto> challenges = challengeService.getChallengesByUserId(userId);
-        return new ResponseEntity<>(challenges, HttpStatus.OK);
     }
 
     @GetMapping(

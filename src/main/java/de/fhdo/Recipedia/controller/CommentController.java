@@ -38,13 +38,4 @@ public class CommentController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-
-    @GetMapping(
-        path = "/recipe/{recipeId}",
-        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
-    )
-    public ResponseEntity<List<CommentDto>> getCommentsByRecipe(@PathVariable Long recipeId) {
-        List<CommentDto> comments = commentService.getCommentsByRecipe(recipeId);
-        return new ResponseEntity<>(comments, HttpStatus.OK);
-    }
 }

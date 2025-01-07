@@ -27,16 +27,4 @@ public class RatingController {
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
-
-    @GetMapping(
-        path = "/recipe/{recipeId}/average",
-        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
-    )
-    public ResponseEntity<Double> getAverageRating(@PathVariable Long recipeId) {
-        Double averageRating = ratingService.getAverageRating(recipeId);
-        if (averageRating != null) {
-            return new ResponseEntity<>(averageRating, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
 }

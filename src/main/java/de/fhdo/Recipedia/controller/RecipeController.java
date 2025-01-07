@@ -1,6 +1,9 @@
 package de.fhdo.Recipedia.controller;
 
+import de.fhdo.Recipedia.dto.CommentDto;
 import de.fhdo.Recipedia.dto.RecipeDto;
+import de.fhdo.Recipedia.service.CommentService;
+import de.fhdo.Recipedia.service.RatingService;
 import de.fhdo.Recipedia.service.RecipeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,9 +16,15 @@ import java.util.List;
 @RequestMapping("/api/recipes")
 public class RecipeController {
     private final RecipeService recipeService;
+    private final RatingService ratingService;
+    private final CommentService commentService;
 
-    public RecipeController(RecipeService recipeService) {
+    public RecipeController(RecipeService recipeService,
+                            RatingService ratingService,
+                            CommentService commentService) {
         this.recipeService = recipeService;
+        this.ratingService = ratingService;
+        this.commentService = commentService;
     }
 
     @PostMapping(
@@ -44,7 +53,7 @@ public class RecipeController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping(
+    @PatchMapping(
         path = "/{recipeId}",
         produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
         consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
@@ -70,42 +79,25 @@ public class RecipeController {
     }
 
     @GetMapping(
+            path = "/{recipeId}/average_rating",
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+    )
+    public ResponseEntity<Double> getAverageRating(@PathVariable Long recipeId) {
+        Double averageRating = ratingService.getAverageRating(recipeId);
+        if (averageRating != null) {
+            return new ResponseEntity<>(averageRating, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping(
         path = "/search",
         produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
     )
     public ResponseEntity<List<RecipeDto>> searchRecipes(
-            @RequestParam(required = false) String keyword) {
-        List<RecipeDto> recipes = recipeService.getRecipes(keyword);
-        return new ResponseEntity<>(recipes, HttpStatus.OK);
-    }
-
-    @GetMapping(
-        path = "/category/{category}",
-        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
-    )
-    public ResponseEntity<List<RecipeDto>> getRecipesByCategory(
-            @PathVariable String category) {
-        List<RecipeDto> recipes = recipeService.getRecipesByCategory(category);
-        return new ResponseEntity<>(recipes, HttpStatus.OK);
-    }
-
-    @GetMapping(
-        path = "/author/{authorId}",
-        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
-    )
-    public ResponseEntity<List<RecipeDto>> getRecipesByAuthor(
-            @PathVariable Long authorId) {
-        List<RecipeDto> recipes = recipeService.getRecipesByAuthor(authorId);
-        return new ResponseEntity<>(recipes, HttpStatus.OK);
-    }
-
-    @GetMapping(
-        path = "/challenge/{challengeId}",
-        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
-    )
-    public ResponseEntity<List<RecipeDto>> getRecipesByChallenge(
-            @PathVariable Long challengeId) {
-        List<RecipeDto> recipes = recipeService.getRecipesByChallenge(challengeId);
+            @RequestParam(required = false) String keyword,
+            @RequestParam(required = false) String category) {
+        List<RecipeDto> recipes = recipeService.getRecipes(keyword, category);
         return new ResponseEntity<>(recipes, HttpStatus.OK);
     }
 
@@ -116,5 +108,14 @@ public class RecipeController {
     public ResponseEntity<List<RecipeDto>> getMostViewedRecipes() {
         List<RecipeDto> recipes = recipeService.getMostViewedRecipes();
         return new ResponseEntity<>(recipes, HttpStatus.OK);
+    }
+
+    @GetMapping(
+            path = "/{recipeId}/comments",
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+    )
+    public ResponseEntity<List<CommentDto>> getCommentsByRecipe(@PathVariable Long recipeId) {
+        List<CommentDto> comments = commentService.getCommentsByRecipe(recipeId);
+        return new ResponseEntity<>(comments, HttpStatus.OK);
     }
 }

@@ -1,7 +1,9 @@
 package de.fhdo.Recipedia.controller;
 
 import de.fhdo.Recipedia.dto.DiscussionDto;
+import de.fhdo.Recipedia.dto.ReplyDto;
 import de.fhdo.Recipedia.service.DiscussionService;
+import de.fhdo.Recipedia.service.ReplyService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -13,9 +15,12 @@ import java.util.List;
 @RequestMapping("/api/discussions")
 public class DiscussionController {
     private final DiscussionService discussionService;
+    private final ReplyService replyService;
 
-    public DiscussionController(DiscussionService discussionService) {
+    public DiscussionController(DiscussionService discussionService,
+                                ReplyService replyService) {
         this.discussionService = discussionService;
+        this.replyService = replyService;
     }
 
     @PostMapping(
@@ -60,11 +65,12 @@ public class DiscussionController {
     }
 
     @GetMapping(
-        path = "/user/{userId}",
-        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+            path = "/{discussionId}/replies",
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
     )
-    public ResponseEntity<List<DiscussionDto>> getDiscussionsByUser(@PathVariable Long userId) {
-        List<DiscussionDto> discussions = discussionService.getDiscussionsByUser(userId);
-        return new ResponseEntity<>(discussions, HttpStatus.OK);
+    public ResponseEntity<List<ReplyDto>> getRepliesByDiscussion(@PathVariable Long discussionId) {
+        List<ReplyDto> replies = replyService.getRepliesByDiscussion(discussionId);
+        return new ResponseEntity<>(replies, HttpStatus.OK);
     }
+
 }
