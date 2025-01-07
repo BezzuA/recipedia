@@ -17,6 +17,7 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ReplyServiceImpl implements ReplyService {
@@ -37,7 +38,7 @@ public class ReplyServiceImpl implements ReplyService {
 
     @Override
     @Transactional
-    public ReplyDto addReply(ReplyDto replyDto) {
+    public ReplyDto createReply(ReplyDto replyDto) {
         User user = userRepository.findById(replyDto.getUser().getUserId()).orElse(null);
         Discussion discussion = discussionRepository.findById(replyDto.getDiscussionId()).orElse(null);
 
@@ -82,5 +83,17 @@ public class ReplyServiceImpl implements ReplyService {
 
 
         return replies.stream().map(replyConverter::toDto).toList();
+    }
+
+    @Override
+    @Transactional
+    public List<ReplyDto> getRepliesByUser(Long userId) {
+        User user = userRepository.findById(userId).orElse(null);
+        if (user == null) {
+            return List.of();
+        }
+        return user.getReplies().stream()
+                .map(replyConverter::toDto)
+                .collect(Collectors.toList());
     }
 }

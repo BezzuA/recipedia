@@ -5,7 +5,8 @@ import de.fhdo.Recipedia.dto.ReplyDto;
 import java.util.List;
 
 public interface ReplyService {
-    ReplyDto addReply(ReplyDto replyDto);
+    ReplyDto createReply(ReplyDto replyDto);
     Boolean deleteReply(Long replyId);
     List<ReplyDto> getRepliesByDiscussion(Long discussionId);
+    List<ReplyDto> getRepliesByUser(Long userId);
 }

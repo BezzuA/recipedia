@@ -125,6 +125,8 @@ public class RecipeServiceImpl implements RecipeService {
 
             if (rating != null) {
                 recipeDto.setIsRated(true);
+            } else {
+                recipeDto.setIsRated(false);
             }
         } else {
             recipeDto.setIsRated(false);

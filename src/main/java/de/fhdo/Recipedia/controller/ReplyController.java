@@ -7,8 +7,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/api/replies")
 public class ReplyController {
@@ -23,7 +21,7 @@ public class ReplyController {
         consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
     )
     public ResponseEntity<ReplyDto> createReply(@RequestBody ReplyDto replyDto) {
-        ReplyDto createdReply = replyService.addReply(replyDto);
+        ReplyDto createdReply = replyService.createReply(replyDto);
         if (createdReply != null) {
             return new ResponseEntity<>(createdReply, HttpStatus.CREATED);
         }

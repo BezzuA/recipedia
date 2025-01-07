@@ -28,7 +28,7 @@ public class ChallengeController {
         consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
     )
     public ResponseEntity<ChallengeDto> createChallenge(@RequestBody ChallengeDto challengeDto) {
-        ChallengeDto createdChallenge = challengeService.addChallenge(challengeDto);
+        ChallengeDto createdChallenge = challengeService.createChallenge(challengeDto);
         if (createdChallenge != null) {
             return new ResponseEntity<>(createdChallenge, HttpStatus.CREATED);
         }

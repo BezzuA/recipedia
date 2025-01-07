@@ -48,7 +48,7 @@ public class ChallengeServiceImpl implements ChallengeService {
 
     @Override
     @Transactional
-    public ChallengeDto addChallenge(ChallengeDto challengeDto) {
+    public ChallengeDto createChallenge(ChallengeDto challengeDto) {
         Date startDate = challengeDto.getStartDate();
         Date endDate = challengeDto.getEndDate();
 
@@ -203,5 +203,15 @@ public class ChallengeServiceImpl implements ChallengeService {
         }
 
         return winnerRecipes.stream().map(recipeConverter::toDto).toList();
+    }
+
+    @Override
+    @Transactional
+    public ChallengeDto getChallengeByRecipe(Long recipeId) {
+        Recipe recipe = recipeRepository.findById(recipeId).orElse(null);
+        if (recipe == null || recipe.getChallenge() == null) {
+            return null;
+        }
+        return challengeConverter.toDto(recipe.getChallenge());
     }
 }

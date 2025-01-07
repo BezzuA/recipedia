@@ -33,7 +33,7 @@ public class DiscussionServiceImpl implements DiscussionService {
 
     @Override
     @Transactional
-    public DiscussionDto addDiscussion(DiscussionDto discussionDto) {
+    public DiscussionDto createDiscussion(DiscussionDto discussionDto) {
         User user = userRepository.findById(discussionDto.getUser().getUserId()).orElse(null);
 
         if (user == null) {

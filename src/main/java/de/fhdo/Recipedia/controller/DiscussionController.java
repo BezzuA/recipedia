@@ -28,7 +28,7 @@ public class DiscussionController {
         consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
     )
     public ResponseEntity<DiscussionDto> createDiscussion(@RequestBody DiscussionDto discussionDto) {
-        DiscussionDto createdDiscussion = discussionService.addDiscussion(discussionDto);
+        DiscussionDto createdDiscussion = discussionService.createDiscussion(discussionDto);
         if (createdDiscussion != null) {
             return new ResponseEntity<>(createdDiscussion, HttpStatus.CREATED);
         }

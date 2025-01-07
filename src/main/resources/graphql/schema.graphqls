@@ -1,0 +1,175 @@
+type Query {
+    # User queries
+    user(id: ID!): User
+    
+    # Recipe queries
+    recipe(id: ID!, userId: ID): Recipe
+    recipes(keyword: String, category: String): [Recipe]
+    popularRecipes: [Recipe]
+    recipesByAuthor(authorId: ID!): [Recipe]
+    recipesByChallenge(challengeId: ID!): [Recipe]
+    
+    # Challenge queries
+    challenge(id: ID!): Challenge
+    challenges: [Challenge]
+    challengesByUser(userId: ID!): [Challenge]
+    
+    # Discussion queries
+    discussion(id: ID!): Discussion
+    discussions: [Discussion]
+    discussionsByUser(userId: ID!): [Discussion]
+    
+    # Comment queries
+    commentsByRecipe(recipeId: ID!): [Comment]
+    repliesByDiscussion(discussionId: ID!): [Reply]
+    averageRating(recipeId: ID!): Float
+}
+
+type Mutation {
+    # User mutations
+    register(username: String!, password: String!): User
+    login(username: String!, password: String!): User
+    updateUser(userId: ID!, username: String, email: String, bio: String): User
+    changePassword(userId: ID!, oldPassword: String!, newPassword: String!): Boolean
+    deleteUser(userId: ID!): Boolean
+    
+    # Recipe mutations
+    createRecipe(recipe: RecipeInput!): Recipe
+    updateRecipe(recipeId: ID!, recipe: RecipeInput!): Recipe
+    deleteRecipe(recipeId: ID!): Boolean
+    
+    # Rating mutations
+    rateRecipe(rating: RatingInput!): Rating
+    
+    # Challenge mutations
+    createChallenge(challenge: ChallengeInput!): Challenge
+    updateChallenge(challengeId: ID!, challenge: ChallengeInput!): Challenge
+    deleteChallenge(challengeId: ID!): Boolean
+    joinChallenge(challengeId: ID!, recipeId: ID!): Challenge
+    
+    # Discussion mutations
+    createDiscussion(discussion: DiscussionInput!): Discussion
+    deleteDiscussion(discussionId: ID!): Boolean
+    
+    # Comment mutations
+    createComment(comment: CommentInput!): Comment
+    deleteComment(commentId: ID!): Boolean
+    
+    # Reply mutations
+    createReply(reply: ReplyInput!): Reply
+    deleteReply(replyId: ID!): Boolean
+}
+
+# Input types
+input RecipeInput {
+    title: String!
+    description: String
+    category: String
+    ingredients: [String]!
+    instructions: String!
+    authorId: ID!
+}
+
+input RatingInput {
+    recipeId: ID!
+    userId: ID!
+    score: Int!
+}
+
+input ChallengeInput {
+    title: String!
+    description: String
+    startDate: String!
+    endDate: String!
+}
+
+input DiscussionInput {
+    title: String!
+    description: String
+    userId: ID!
+}
+
+input CommentInput {
+    text: String!
+    userId: ID!
+    recipeId: ID!
+}
+
+input ReplyInput {
+    text: String!
+    userId: ID!
+    discussionId: ID!
+}
+
+type User {
+    userId: ID!
+    username: String!
+    email: String
+    bio: String
+    recipes: [Recipe]
+    comments: [Comment]
+    discussions: [Discussion]
+    replies: [Reply]
+    challenges: [Challenge]
+}
+
+type Recipe {
+    recipeId: ID!
+    title: String!
+    description: String
+    category: String
+    viewCount: Int
+    ingredients: [String]
+    instructions: String
+    creationDate: String
+    author: User!
+    challenge: Challenge
+    comments: [Comment]
+    ratings: [Rating]
+    averageRating: Float
+    isRated: Boolean
+}
+
+type Challenge {
+    challengeId: ID!
+    title: String!
+    description: String
+    startDate: String!
+    endDate: String!
+    recipes: [Recipe]
+    users: [User]
+    numberOfRecipes: Int
+}
+
+type Discussion {
+    discussionId: ID!
+    title: String!
+    description: String
+    creationDate: String
+    user: User!
+    replies: [Reply]
+    repliesCount: Int
+}
+
+type Comment {
+    commentId: ID!
+    text: String!
+    creationTime: String!
+    user: User!
+    recipe: Recipe!
+}
+
+type Reply {
+    replyId: ID!
+    text: String!
+    creationTime: String!
+    user: User!
+    discussion: Discussion!
+}
+
+type Rating {
+    ratingId: ID!
+    score: Int!
+    user: User!
+    recipe: Recipe!
+}

@@ -17,6 +17,7 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CommentServiceImpl implements CommentService {
@@ -34,7 +35,7 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     @Transactional
-    public CommentDto addComment(CommentDto commentDto) {
+    public CommentDto createComment(CommentDto commentDto) {
         User user = userRepository.findById(commentDto.getUser().getUserId()).orElse(null);
         Recipe recipe = recipeRepository.findById(commentDto.getRecipeId()).orElse(null);
 
@@ -80,5 +81,17 @@ public class CommentServiceImpl implements CommentService {
 
 
         return comments.stream().map(commentConverter::toDto).toList();
+    }
+
+    @Override
+    @Transactional
+    public List<CommentDto> getCommentsByUser(Long userId) {
+        User user = userRepository.findById(userId).orElse(null);
+        if (user == null) {
+            return List.of();
+        }
+        return user.getComments().stream()
+                .map(commentConverter::toDto)
+                .collect(Collectors.toList());
     }
 }

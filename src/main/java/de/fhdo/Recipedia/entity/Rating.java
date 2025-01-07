@@ -15,7 +15,7 @@ public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ratingId;
-    private int score;
+    private Integer score;
 
     @ManyToOne
     @JoinColumn(name = "recipe_id")

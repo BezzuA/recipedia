@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class RatingServiceImpl implements RatingService {
@@ -33,7 +34,7 @@ public class RatingServiceImpl implements RatingService {
 
     @Override
     @Transactional
-    public RatingDto addRating(RatingDto ratingDto) {
+    public RatingDto createRating(RatingDto ratingDto) {
         Recipe recipe = recipeRepository.findById(ratingDto.getRecipeId()).orElse(null);
         User user = userRepository.findById(ratingDto.getUserId()).orElse(null);
 
@@ -76,5 +77,17 @@ public class RatingServiceImpl implements RatingService {
         }
 
         return scores.stream().mapToDouble(Integer::doubleValue).average().orElse(0.0);
+    }
+
+    @Override
+    @Transactional
+    public List<RatingDto> getRatingsByRecipe(Long recipeId) {
+        Recipe recipe = recipeRepository.findById(recipeId).orElse(null);
+        if (recipe == null) {
+            return List.of();
+        }
+        return recipe.getRatings().stream()
+                .map(ratingConverter::toDto)
+                .collect(Collectors.toList());
     }
 }

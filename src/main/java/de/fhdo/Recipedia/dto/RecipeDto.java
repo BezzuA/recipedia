@@ -24,6 +24,6 @@ public class RecipeDto implements Serializable {
     private String instructions;
     private Date creationDate;
     private UserDto author = new UserDto();
-    private double averageRating;
+    private Double averageRating;
     private Boolean isRated;
 }

@@ -7,8 +7,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/api/comments")
 public class CommentController {
@@ -23,7 +21,7 @@ public class CommentController {
         consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
     )
     public ResponseEntity<CommentDto> createComment(@RequestBody CommentDto commentDto) {
-        CommentDto createdComment = commentService.addComment(commentDto);
+        CommentDto createdComment = commentService.createComment(commentDto);
         if (createdComment != null) {
             return new ResponseEntity<>(createdComment, HttpStatus.CREATED);
         }

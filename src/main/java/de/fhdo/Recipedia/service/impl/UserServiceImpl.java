@@ -2,20 +2,28 @@ package de.fhdo.Recipedia.service.impl;
 
 import de.fhdo.Recipedia.converter.UserConverter;
 import de.fhdo.Recipedia.dto.UserDto;
+import de.fhdo.Recipedia.entity.Challenge;
 import de.fhdo.Recipedia.entity.User;
+import de.fhdo.Recipedia.repository.ChallengeRepository;
 import de.fhdo.Recipedia.repository.UserRepository;
 import de.fhdo.Recipedia.service.UserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+    private final ChallengeRepository challengeRepository;
+
     private final UserConverter userConverter;
 
     public UserServiceImpl(UserRepository userRepository,
+                            ChallengeRepository challengeRepository,
                            UserConverter userConverter) {
         this.userRepository = userRepository;
+        this.challengeRepository = challengeRepository;
         this.userConverter = userConverter;
     }
 
@@ -109,5 +117,28 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
 
         return userConverter.toDto(user);
+    }
+
+    @Override
+    @Transactional
+    public UserDto getUser(Long id) {
+        User user = userRepository.findById(id).orElse(null);
+
+        if (user == null) {
+            return null;
+        }
+
+        return userConverter.toDto(user);
+    }
+
+    @Override
+    public List<UserDto> getUsersByChallenge(Long challengeId) {
+        Challenge challenge = challengeRepository.findById(challengeId).orElse(null);
+
+        if (challenge == null) {
+            return null;
+        }
+
+        return challenge.getUsers().stream().map(userConverter::toDto).toList();
     }
 }

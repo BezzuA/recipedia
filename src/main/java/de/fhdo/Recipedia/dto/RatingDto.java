@@ -14,7 +14,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class RatingDto implements Serializable {
     private Long ratingId;
-    private int score;
+    private Integer score;
     private Long userId;
     private Long recipeId;
 }

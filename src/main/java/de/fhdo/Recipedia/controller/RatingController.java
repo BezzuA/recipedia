@@ -21,7 +21,7 @@ public class RatingController {
         consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
     )
     public ResponseEntity<RatingDto> createRating(@RequestBody RatingDto ratingDto) {
-        RatingDto createdRating = ratingService.addRating(ratingDto);
+        RatingDto createdRating = ratingService.createRating(ratingDto);
         if (createdRating != null) {
             return new ResponseEntity<>(createdRating, HttpStatus.CREATED);
         }

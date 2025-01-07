@@ -20,5 +20,5 @@ public class DiscussionDto implements Serializable {
     private String description;
     private Date creationDate;
     private UserDto user = new UserDto();
-    private int repliesCount;
+    private Integer repliesCount;
 }
