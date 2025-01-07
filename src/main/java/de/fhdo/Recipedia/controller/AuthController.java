@@ -7,10 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -49,5 +46,17 @@ public class AuthController {
             return new ResponseEntity<>(userDto, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+    }
+
+    @PatchMapping("/password/{userId}")
+    public ResponseEntity<Void> changePassword(
+            @PathVariable Long userId,
+            @RequestParam String oldPassword,
+            @RequestParam String newPassword) {
+        Boolean success = userService.changePassword(userId, oldPassword, newPassword);
+        if (success) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 }

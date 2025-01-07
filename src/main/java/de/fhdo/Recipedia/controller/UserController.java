@@ -33,18 +33,6 @@ public class UserController {
         this.challengeService = challengeService;
     }
 
-    @PatchMapping("/{userId}/password")
-    public ResponseEntity<Void> changePassword(
-            @PathVariable Long userId,
-            @RequestParam String oldPassword,
-            @RequestParam String newPassword) {
-        Boolean success = userService.changePassword(userId, oldPassword, newPassword);
-        if (success) {
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-    }
-
     @PatchMapping(
         path = "/{userId}",
         produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
