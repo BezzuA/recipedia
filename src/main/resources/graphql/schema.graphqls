@@ -102,8 +102,8 @@ input ReplyInput {
 }
 
 type User {
-    userId: ID!
-    username: String!
+    userId: ID
+    username: String
     email: String
     bio: String
     recipes: [Recipe]
@@ -114,15 +114,15 @@ type User {
 }
 
 type Recipe {
-    recipeId: ID!
-    title: String!
+    recipeId: ID
+    title: String
     description: String
     category: String
     viewCount: Int
     ingredients: [String]
     instructions: String
     creationDate: String
-    author: User!
+    author: User
     challenge: Challenge
     comments: [Comment]
     ratings: [Rating]
@@ -131,45 +131,45 @@ type Recipe {
 }
 
 type Challenge {
-    challengeId: ID!
-    title: String!
+    challengeId: ID
+    title: String
     description: String
-    startDate: String!
-    endDate: String!
+    startDate: String
+    endDate: String
     recipes: [Recipe]
     users: [User]
     numberOfRecipes: Int
 }
 
 type Discussion {
-    discussionId: ID!
-    title: String!
+    discussionId: ID
+    title: String
     description: String
     creationDate: String
-    user: User!
+    user: User
     replies: [Reply]
     repliesCount: Int
 }
 
 type Comment {
-    commentId: ID!
-    text: String!
-    creationTime: String!
-    user: User!
-    recipe: Recipe!
+    commentId: ID
+    text: String
+    creationTime: String
+    user: User
+    recipe: Recipe
 }
 
 type Reply {
-    replyId: ID!
-    text: String!
-    creationTime: String!
-    user: User!
-    discussion: Discussion!
+    replyId: ID
+    text: String
+    creationTime: String
+    user: User
+    discussion: Discussion
 }
 
 type Rating {
-    ratingId: ID!
-    score: Int!
-    user: User!
-    recipe: Recipe!
+    ratingId: ID
+    score: Int
+    user: User
+    recipe: Recipe
 }
