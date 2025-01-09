@@ -98,6 +98,13 @@ public class UserController {
         return new ResponseEntity<>(discussions, HttpStatus.OK);
     }
 
+    @GetMapping("/me/discussions")
+    public ResponseEntity<List<DiscussionDto>> getDiscussionsForCurrentUser() {
+        Long userId = 1L;
+        List<DiscussionDto> discussions = discussionService.getDiscussionsByUser(userId);
+        return ResponseEntity.ok(discussions);
+    }
+
     @GetMapping(
             path = "/{userId}/challenges",
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
@@ -105,5 +112,12 @@ public class UserController {
     public ResponseEntity<List<ChallengeDto>> getChallengesByUser(@PathVariable Long userId) {
         List<ChallengeDto> challenges = challengeService.getChallengesByUserId(userId);
         return new ResponseEntity<>(challenges, HttpStatus.OK);
+    }
+
+    @GetMapping("/me/challenges")
+    public ResponseEntity<List<ChallengeDto>> getChallengesForCurrentUser() {
+        Long userId = 1L;
+        List<ChallengeDto> challenges = challengeService.getChallengesByUserId(userId);
+        return ResponseEntity.ok(challenges);
     }
 }

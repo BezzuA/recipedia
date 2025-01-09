@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const recipesListEl = document.getElementById('challenge-recipes-list');
         recipesListEl.innerHTML = ''; // clear existing
 
-        challengeData.recipes.forEach(recipe => {
+        const recipes = challengeData.recipes || [];
+        recipes.forEach(recipe => {
             const li = document.createElement('li');
             const a = document.createElement('a');
             a.textContent = recipe.title || 'No Title';

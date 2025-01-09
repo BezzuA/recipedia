@@ -22,4 +22,5 @@ public class ChallengeDto implements Serializable {
     private Date startDate;
     private Date endDate;
     private Integer numberOfRecipes;
+    private List<RecipeDto> recipes;
 }

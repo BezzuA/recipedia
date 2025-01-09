@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/challenges")
 public class ChallengeController {
+
     private final ChallengeService challengeService;
     private final RecipeService recipeService;
 
@@ -24,8 +25,8 @@ public class ChallengeController {
     }
 
     @PostMapping(
-        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-        consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+            produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
+            consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }
     )
     public ResponseEntity<ChallengeDto> createChallenge(@RequestBody ChallengeDto challengeDto) {
         ChallengeDto createdChallenge = challengeService.createChallenge(challengeDto);
@@ -35,22 +36,31 @@ public class ChallengeController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
+    /**
+     * Fetches a single ChallengeDto by ID.
+     * Now also attaches the list of recipes to the same DTO
+     * so the JSON response includes a "recipes" array.
+     */
     @GetMapping(
-        path = "/{challengeId}",
-        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+            path = "/{challengeId}",
+            produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }
     )
     public ResponseEntity<ChallengeDto> getChallenge(@PathVariable Long challengeId) {
         ChallengeDto challenge = challengeService.getChallenge(challengeId);
         if (challenge != null) {
+            // Fetch recipes for this challenge and attach them to the DTO
+            List<RecipeDto> recipes = recipeService.getRecipesByChallenge(challengeId);
+            challenge.setRecipes(recipes);
+
             return new ResponseEntity<>(challenge, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @PatchMapping(
-        path = "/{challengeId}",
-        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-        consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+            path = "/{challengeId}",
+            produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
+            consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }
     )
     public ResponseEntity<ChallengeDto> updateChallenge(
             @PathVariable Long challengeId,
@@ -72,9 +82,13 @@ public class ChallengeController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    /**
+     * Returns only the recipes for a given challengeId
+     * (if your front end wants them separately)
+     */
     @GetMapping(
             path = "/{challengeId}/recipes",
-            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+            produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }
     )
     public ResponseEntity<List<RecipeDto>> getRecipesByChallenge(
             @PathVariable Long challengeId) {
@@ -83,8 +97,8 @@ public class ChallengeController {
     }
 
     @PostMapping(
-        path = "/{challengeId}/join",
-        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+            path = "/{challengeId}/join",
+            produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }
     )
     public ResponseEntity<ChallengeDto> joinChallenge(
             @PathVariable Long challengeId,
@@ -97,7 +111,7 @@ public class ChallengeController {
     }
 
     @GetMapping(
-        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+            produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }
     )
     public ResponseEntity<List<ChallengeDto>> getAllChallenges() {
         List<ChallengeDto> challenges = challengeService.getChallenges();
@@ -105,8 +119,8 @@ public class ChallengeController {
     }
 
     @GetMapping(
-        path = "/{challengeId}/winners",
-        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+            path = "/{challengeId}/winners",
+            produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }
     )
     public ResponseEntity<List<RecipeDto>> getWinnerRecipes(@PathVariable Long challengeId) {
         List<RecipeDto> winners = challengeService.getWinnerRecipesByChallengeId(challengeId);
