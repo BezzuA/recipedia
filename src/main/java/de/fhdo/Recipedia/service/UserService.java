@@ -13,4 +13,6 @@ public interface UserService {
     UserDto getUser(Long id);
 
     List<UserDto> getUsersByChallenge(Long challengeId);
+
+    UserDto getUserById(Long userId);
 }

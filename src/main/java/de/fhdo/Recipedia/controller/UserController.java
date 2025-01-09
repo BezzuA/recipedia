@@ -33,6 +33,18 @@ public class UserController {
         this.challengeService = challengeService;
     }
 
+    @GetMapping(
+            path = "/{userId}",
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+    )
+    public ResponseEntity<UserDto> getUserById(@PathVariable Long userId) {
+        UserDto user = userService.getUserById(userId);
+        if (user != null) {
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
     @PatchMapping(
         path = "/{userId}",
         produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
