@@ -11,6 +11,6 @@ import java.util.List;
 public interface ChallengeRepository extends JpaRepository<Challenge, Long> {
     List<Challenge> findAllByOrderByEndDateDesc();
 
-    @Query("SELECT c FROM Challenge c JOIN c.users u WHERE u.userId = :userId ORDER BY c.endDate ASC")
-    List<Challenge> findChallengesByUserIdOrderByEndDateAsc(@Param("userId") Long userId);
+    @Query("SELECT c FROM Challenge c JOIN c.users u WHERE u.userId = :userId ORDER BY c.endDate DESC")
+    List<Challenge> findChallengesByUserIdOrderByEndDateDesc(@Param("userId") Long userId);
 }

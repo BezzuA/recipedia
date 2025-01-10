@@ -143,12 +143,27 @@ public class ChallengeServiceImpl implements ChallengeService {
             return null;
         }
 
+        Date currentDate = new Date();
+
+        if (currentDate.before(challenge.getStartDate())) {
+            return null;
+        }
+
+        if (currentDate.after(challenge.getEndDate())) {
+            return null;
+        }
+
+        Date recipeCreationDate = recipe.getCreationDate();
+        if (recipeCreationDate.before(challenge.getStartDate()) || 
+            recipeCreationDate.after(challenge.getEndDate())) {
+            return null;
+        }
+
         challenge.getRecipes().add(recipe);
         recipe.setChallenge(challenge);
 
         challengeRepository.save(challenge);
         recipeRepository.save(recipe);
-
 
         return challengeConverter.toDto(challenge);
     }
@@ -162,7 +177,7 @@ public class ChallengeServiceImpl implements ChallengeService {
             return null;
         }
 
-        List<Challenge> challenges = challengeRepository.findChallengesByUserIdOrderByEndDateAsc(userId);
+        List<Challenge> challenges = challengeRepository.findChallengesByUserIdOrderByEndDateDesc(userId);
 
         return challenges.stream().map(challengeConverter::toDto).toList();
     }

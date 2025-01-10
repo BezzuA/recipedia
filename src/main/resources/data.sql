@@ -10,25 +10,25 @@ INSERT INTO users (username, email, password, bio) VALUES
 -- Challenges
 INSERT INTO challenges (title, description, start_date, end_date) VALUES
 ('Summer Grilling', 'Create your best BBQ recipe', '2024-06-01', '2024-08-31'),
-('Vegan Month', 'Share your favorite vegan dishes', '2024-07-01', '2024-07-31'),
+('Vegan Month', 'Share your favorite vegan dishes', '2024-12-15', '2025-07-31'),
 ('Holiday Baking', 'Create festive holiday treats', '2024-12-01', '2024-12-31'),
-('Healthy January', 'Start the year with healthy recipes', '2024-01-01', '2024-01-31'),
-('Spring Fresh', 'Cook with spring ingredients', '2024-03-01', '2024-03-31');
+('Healthy January', 'Start the year with healthy recipes', '2025-01-01', '2025-02-28'),
+('Spring Fresh', 'Cook with spring ingredients', '2025-01-05', '2025-03-31');
 
 -- Recipes
 INSERT INTO recipes (title, description, category, view_count, instructions, creation_date, user_id, challenge_id) VALUES
-('Classic Burger', 'Juicy homemade burger', 'Main Course', 150, 'Mix ground beef with seasonings...', '2024-01-15', 1, 1),
-('Vegan Curry', 'Spicy vegetable curry', 'Vegan', 120, 'Chop vegetables and cook with spices...', '2024-01-20', 2, 2),
+('Classic Burger', 'Juicy homemade burger', 'Main Course', 150, 'Mix ground beef with seasonings...', '2024-06-15', 1, 1),
+('Vegan Curry', 'Spicy vegetable curry', 'Vegan', 120, 'Chop vegetables and cook with spices...', '2024-12-20', 2, 2),
 ('Spaghetti Carbonara', 'Classic Italian pasta dish', 'Italian', 200, 'Cook pasta, prepare sauce with eggs and cheese...', '2024-01-25', 2, NULL),
 ('Thai Green Curry', 'Spicy and aromatic curry', 'Asian', 180, 'Prepare curry paste, cook with coconut milk...', '2024-01-28', 3, NULL),
 ('French Onion Soup', 'Traditional French soup', 'Soup', 160, 'Caramelize onions, add beef broth...', '2024-02-01', 2, NULL),
-('Summer Salad', 'Fresh and light salad', 'Salad', 90, 'Mix fresh vegetables with vinaigrette...', '2024-02-05', 1, 1),
+('Summer Salad', 'Fresh and light salad', 'Salad', 90, 'Mix fresh vegetables with vinaigrette...', '2024-06-25', 1, 1),
 ('Beef Wellington', 'Classic British dish', 'Main Course', 250, 'Prepare beef tenderloin, wrap in pastry...', '2024-02-10', 4, NULL),
 ('Seafood Gumbo', 'New Orleans classic', 'Soup', 175, 'Make roux, add seafood and seasonings...', '2024-02-12', 5, NULL),
 ('Perfect Roast Chicken', 'Sunday dinner favorite', 'Main Course', 300, 'Season chicken, roast with vegetables...', '2024-02-15', 6, NULL),
-('Chocolate Soufflé', 'Elegant dessert', 'Dessert', 220, 'Prepare chocolate base, whip eggs...', '2024-02-18', 4, 3),
-('Green Smoothie Bowl', 'Healthy breakfast', 'Breakfast', 150, 'Blend fruits and greens...', '2024-02-20', 5, 4),
-('Spring Risotto', 'Creamy rice dish', 'Italian', 180, 'Cook arborio rice with spring vegetables...', '2024-02-22', 6, 5);
+('Chocolate Soufflé', 'Elegant dessert', 'Dessert', 220, 'Prepare chocolate base, whip eggs...', '2024-12-15', 4, 3),
+('Green Smoothie Bowl', 'Healthy breakfast', 'Breakfast', 150, 'Blend fruits and greens...', '2025-01-05', 5, 4),
+('Spring Risotto', 'Creamy rice dish', 'Italian', 180, 'Cook arborio rice with spring vegetables...', '2025-01-10', 6, 5);
 
 -- Recipe ingredients (using @ElementCollection)
 INSERT INTO recipe_ingredients (recipe_recipe_id, ingredients) VALUES
