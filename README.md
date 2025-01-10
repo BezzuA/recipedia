@@ -1,4 +1,4 @@
-# Recipedia
+# web2-ws24-recipedia
 - [Repo to the Frontend of Lab 08](https://github.com/linxin4cs/recipedia-frontend)
 
 ## How to run the app
