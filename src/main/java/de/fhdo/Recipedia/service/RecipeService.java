@@ -1,6 +1,7 @@
 package de.fhdo.Recipedia.service;
 
 import de.fhdo.Recipedia.dto.RecipeDto;
+import de.fhdo.Recipedia.entity.Recipe;
 
 import java.util.List;
 
@@ -13,4 +14,5 @@ public interface RecipeService {
     List<RecipeDto> getRecipesByAuthor(Long authorId);
     List<RecipeDto> getRecipesByChallenge(Long challengeId);
     List<RecipeDto> getMostViewedRecipes();
+    List<RecipeDto> addAverageRatingToRecipeDtos(List<Recipe> recipes);
 }

@@ -18,6 +18,7 @@ public class RecipeConverter {
         recipeDto.setIngredients(recipe.getIngredients());
         recipeDto.setInstructions(recipe.getInstructions());
         recipeDto.setCreationDate(recipe.getCreationDate());
+        recipeDto.setChallenge(recipe.getChallenge() != null ? new ChallengeConverter().toDto(recipe.getChallenge()) : null);
 
         recipeDto.getAuthor().setUserId(recipe.getAuthor().getUserId());
         recipeDto.getAuthor().setUsername(recipe.getAuthor().getUsername());

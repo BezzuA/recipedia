@@ -26,4 +26,5 @@ public class RecipeDto implements Serializable {
     private UserDto author = new UserDto();
     private Double averageRating;
     private Boolean isRated;
+    private ChallengeDto challenge;
 }

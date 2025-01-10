@@ -12,6 +12,7 @@ import de.fhdo.Recipedia.repository.RecipeRepository;
 import de.fhdo.Recipedia.repository.UserRepository;
 import de.fhdo.Recipedia.service.ChallengeService;
 import de.fhdo.Recipedia.service.RatingService;
+import de.fhdo.Recipedia.service.RecipeService;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -26,24 +27,25 @@ public class ChallengeServiceImpl implements ChallengeService {
     private final UserRepository userRepository;
 
     private final ChallengeConverter challengeConverter;
-    private final RecipeConverter recipeConverter;
 
     private final RatingService ratingService;
+    private final RecipeService recipeService;
 
     public ChallengeServiceImpl(ChallengeRepository challengeRepository,
                                 RecipeRepository recipeRepository,
                                 UserRepository userRepository,
                                 ChallengeConverter challengeConverter,
                                 RecipeConverter recipeConverter,
-                                RatingService ratingService) {
+                                RatingService ratingService,
+                                RecipeService recipeService) {
         this.challengeRepository = challengeRepository;
         this.recipeRepository = recipeRepository;
         this.userRepository = userRepository;
 
         this.challengeConverter = challengeConverter;
-        this.recipeConverter = recipeConverter;
 
         this.ratingService = ratingService;
+        this.recipeService = recipeService;
     }
 
     @Override
@@ -135,6 +137,7 @@ public class ChallengeServiceImpl implements ChallengeService {
         Challenge challenge = challengeRepository.findById(challengeId).orElse(null);
         Recipe recipe = recipeRepository.findById(recipeId).orElse(null);
 
+
         if (challenge == null || recipe == null) {
             return null;
         }
@@ -159,11 +162,14 @@ public class ChallengeServiceImpl implements ChallengeService {
             return null;
         }
 
-        challenge.getRecipes().add(recipe);
-        recipe.setChallenge(challenge);
+        User user = recipe.getAuthor();
 
-        challengeRepository.save(challenge);
+        challenge.getRecipes().add(recipe);
+
+        recipe.setChallenge(challenge);
+        user.getChallenges().add(challenge);
         recipeRepository.save(recipe);
+        userRepository.save(user);
 
         return challengeConverter.toDto(challenge);
     }
@@ -217,7 +223,7 @@ public class ChallengeServiceImpl implements ChallengeService {
             }
         }
 
-        return winnerRecipes.stream().map(recipeConverter::toDto).toList();
+       return recipeService.addAverageRatingToRecipeDtos(winnerRecipes);
     }
 
     @Override

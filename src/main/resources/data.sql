@@ -28,7 +28,10 @@ INSERT INTO recipes (title, description, category, view_count, instructions, cre
 ('Perfect Roast Chicken', 'Sunday dinner favorite', 'Main Course', 300, 'Season chicken, roast with vegetables...', '2024-02-15', 6, NULL),
 ('Chocolate Soufflé', 'Elegant dessert', 'Dessert', 220, 'Prepare chocolate base, whip eggs...', '2024-12-15', 4, 3),
 ('Green Smoothie Bowl', 'Healthy breakfast', 'Breakfast', 150, 'Blend fruits and greens...', '2025-01-05', 5, 4),
-('Spring Risotto', 'Creamy rice dish', 'Italian', 180, 'Cook arborio rice with spring vegetables...', '2025-01-10', 6, 5);
+('Spring Risotto', 'Creamy rice dish', 'Italian', 180, 'Cook arborio rice with spring vegetables...', '2025-01-10', 6, 5),
+('Pan-Seared Salmon', 'Perfectly seared salmon with herbs', 'Seafood', 85, 'Season and sear the salmon until crispy outside and tender inside...', '2025-01-15', 1, NULL),
+('Chashu Ramen', 'Rich broth with tender chashu pork', 'Asian', 120, 'Prepare ramen broth, slow cook chashu...', '2025-02-01', 1, NULL),
+('Italian Chicken Wings', 'Crispy and flavorful wings', 'Appetizer', 95, 'Marinate and bake wings until golden...', '2025-03-01', 1, NULL);
 
 -- Recipe ingredients (using @ElementCollection)
 INSERT INTO recipe_ingredients (recipe_recipe_id, ingredients) VALUES
@@ -68,7 +71,16 @@ INSERT INTO recipe_ingredients (recipe_recipe_id, ingredients) VALUES
 (11, 'Chia Seeds'),
 (12, 'Arborio Rice'),
 (12, 'Asparagus'),
-(12, 'Peas');
+(12, 'Peas'),
+(13, 'Fresh Salmon'),
+(13, 'Rosemary'),
+(13, 'Lemon'),
+(14, 'Chashu Pork'),
+(14, 'Ramen Noodles'),
+(14, 'Green Onions'),
+(15, 'Chicken Wings'),
+(15, 'Italian Herbs'),
+(15, 'Olive Oil');
 
 -- Comments
 INSERT INTO comments (text, creation_time, recipe_id, user_id) VALUES
