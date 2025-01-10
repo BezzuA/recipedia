@@ -1,0 +1,2925 @@
+{
+	"info": {
+		"_postman_id": "0f91403d-f8ea-4f7e-b968-3cdf47a7700a",
+		"name": "Recipedia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40827364"
+	},
+	"item": [
+		{
+			"name": "RatingController",
+			"item": [
+				{
+					"name": "createRating",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ratingId\": 0,\n  \"score\": 4,\n  \"userId\": 2,\n  \"recipeId\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Recipedia}}/api/ratings",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"ratings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "createRating-Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ratingId\": 0,\n    \"score\": 0,\n    \"userId\": 0,\n    \"recipeId\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Recipedia}}/api/ratings",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"ratings"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ratingId\": 0,\n    \"score\": 0,\n    \"userId\": 0,\n    \"recipeId\": 0\n}"
+						}
+					]
+				}
+			],
+			"description": "RatingController"
+		},
+		{
+			"name": "DiscussionController",
+			"item": [
+				{
+					"name": "createDiscussion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"discussionId\": 0,\n  \"title\": \"How to make fried chicken?\",\n  \"description\": \"Hello guys! Do you know how....\",\n  \"creationDate\": \"\",\n  \"user\": {\n    \"userId\": 2,\n    \"username\": \"\",\n    \"email\": \"\",\n    \"bio\": \"\"\n  },\n  \"repliesCount\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Recipedia}}/api/discussions",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"discussions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "createDiscussion-Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"discussionId\": 0,\n    \"title\": \"\",\n    \"description\": \"\",\n    \"creationDate\": \"\",\n    \"user\": {\n        \"userId\": 0,\n        \"username\": \"\",\n        \"email\": \"\",\n        \"bio\": \"\"\n    },\n    \"repliesCount\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Recipedia}}/api/discussions",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"discussions"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"discussionId\": 0,\n    \"title\": \"\",\n    \"description\": \"\",\n    \"creationDate\": \"\",\n    \"user\": {\n        \"userId\": 0,\n        \"username\": \"\",\n        \"email\": \"\",\n        \"bio\": \"\"\n    },\n    \"repliesCount\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteDiscussion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/discussions/:discussionId",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"discussions",
+								":discussionId"
+							],
+							"variable": [
+								{
+									"key": "discussionId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleteDiscussion-Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/discussions/:discussionId",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"discussions",
+										":discussionId"
+									],
+									"variable": [
+										{
+											"key": "discussionId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "null"
+						}
+					]
+				},
+				{
+					"name": "getDiscussion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/discussions/:discussionId",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"discussions",
+								":discussionId"
+							],
+							"variable": [
+								{
+									"key": "discussionId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getDiscussion-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/discussions/:discussionId",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"discussions",
+										":discussionId"
+									],
+									"variable": [
+										{
+											"key": "discussionId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"discussionId\": 0,\n    \"title\": \"\",\n    \"description\": \"\",\n    \"creationDate\": \"\",\n    \"user\": {\n        \"userId\": 0,\n        \"username\": \"\",\n        \"email\": \"\",\n        \"bio\": \"\"\n    },\n    \"repliesCount\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "getAllDiscussions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/discussions",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"discussions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAllDiscussions-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/discussions",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"discussions"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"discussionId\": 0,\n        \"title\": \"\",\n        \"description\": \"\",\n        \"creationDate\": \"\",\n        \"user\": {\n            \"userId\": 0,\n            \"username\": \"\",\n            \"email\": \"\",\n            \"bio\": \"\"\n        },\n        \"repliesCount\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getRepliesByDiscussion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/discussions/:discussionId/replies",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"discussions",
+								":discussionId",
+								"replies"
+							],
+							"variable": [
+								{
+									"key": "discussionId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getRepliesByDiscussion-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/discussions/:discussionId/replies",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"discussions",
+										":discussionId",
+										"replies"
+									],
+									"variable": [
+										{
+											"key": "discussionId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周二, 07 1月 202511:30:41 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"replyId\": 0,\n        \"text\": \"\",\n        \"creationTime\": \"\",\n        \"user\": {\n            \"userId\": 0,\n            \"username\": \"\",\n            \"email\": \"\",\n            \"bio\": \"\"\n        },\n        \"discussionId\": 0\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "DiscussionController"
+		},
+		{
+			"name": "ChallengeController",
+			"item": [
+				{
+					"name": "createChallenge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"challengeId\": 0,\n  \"title\": \"Test Challenge\",\n  \"description\": \"Test Des...\",\n  \"startDate\": \"2025-02-01\",\n  \"endDate\": \"2025-03-02\",\n  \"numberOfRecipes\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Recipedia}}/api/challenges",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"challenges"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "createChallenge-Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"challengeId\": 0,\n    \"title\": \"\",\n    \"description\": \"\",\n    \"startDate\": \"\",\n    \"endDate\": \"\",\n    \"numberOfRecipes\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Recipedia}}/api/challenges",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"challenges"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"challengeId\": 0,\n    \"title\": \"\",\n    \"description\": \"\",\n    \"startDate\": \"\",\n    \"endDate\": \"\",\n    \"numberOfRecipes\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "getChallenge",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/challenges/:challengeId",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"challenges",
+								":challengeId"
+							],
+							"variable": [
+								{
+									"key": "challengeId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getChallenge-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/challenges/:challengeId",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"challenges",
+										":challengeId"
+									],
+									"variable": [
+										{
+											"key": "challengeId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"challengeId\": 0,\n    \"title\": \"\",\n    \"description\": \"\",\n    \"startDate\": \"\",\n    \"endDate\": \"\",\n    \"numberOfRecipes\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "updateChallenge",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"challengeId\": 0,\n  \"title\": \"Start 2025 with healthy recipes\",\n  \"description\": \"Healthy 2025\",\n  \"startDate\": \"2024-01-01\",\n  \"endDate\": \"2024-02-01\",\n  \"numberOfRecipes\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Recipedia}}/api/challenges/:challengeId",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"challenges",
+								":challengeId"
+							],
+							"variable": [
+								{
+									"key": "challengeId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateChallenge-Example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"challengeId\": 0,\n    \"title\": \"\",\n    \"description\": \"\",\n    \"startDate\": \"\",\n    \"endDate\": \"\",\n    \"numberOfRecipes\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Recipedia}}/api/challenges/:challengeId",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"challenges",
+										":challengeId"
+									],
+									"variable": [
+										{
+											"key": "challengeId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"challengeId\": 0,\n    \"title\": \"\",\n    \"description\": \"\",\n    \"startDate\": \"\",\n    \"endDate\": \"\",\n    \"numberOfRecipes\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteChallenge",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/challenges/:challengeId",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"challenges",
+								":challengeId"
+							],
+							"variable": [
+								{
+									"key": "challengeId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleteChallenge-Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/challenges/:challengeId",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"challenges",
+										":challengeId"
+									],
+									"variable": [
+										{
+											"key": "challengeId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "null"
+						}
+					]
+				},
+				{
+					"name": "getRecipesByChallenge",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/challenges/:challengeId/recipes",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"challenges",
+								":challengeId",
+								"recipes"
+							],
+							"variable": [
+								{
+									"key": "challengeId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getRecipesByChallenge-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/challenges/:challengeId/recipes",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"challenges",
+										":challengeId",
+										"recipes"
+									],
+									"variable": [
+										{
+											"key": "challengeId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周二, 07 1月 202511:30:41 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"recipeId\": 0,\n        \"title\": \"\",\n        \"description\": \"\",\n        \"category\": \"\",\n        \"viewCount\": 0,\n        \"ingredients\": [\n            \"\"\n        ],\n        \"instructions\": \"\",\n        \"creationDate\": \"\",\n        \"author\": {\n            \"userId\": 0,\n            \"username\": \"\",\n            \"email\": \"\",\n            \"bio\": \"\"\n        },\n        \"averageRating\": 0.0,\n        \"isRated\": false\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "joinChallenge",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/challenges/:challengeId/join?recipeId=3",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"challenges",
+								":challengeId",
+								"join"
+							],
+							"query": [
+								{
+									"key": "recipeId",
+									"value": "3"
+								}
+							],
+							"variable": [
+								{
+									"key": "challengeId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "joinChallenge-Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/challenges/:challengeId/join?recipeId=",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"challenges",
+										":challengeId",
+										"join"
+									],
+									"query": [
+										{
+											"key": "recipeId",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "challengeId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"challengeId\": 0,\n    \"title\": \"\",\n    \"description\": \"\",\n    \"startDate\": \"\",\n    \"endDate\": \"\",\n    \"numberOfRecipes\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "getAllChallenges",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/challenges",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"challenges"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAllChallenges-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/challenges",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"challenges"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"challengeId\": 0,\n        \"title\": \"\",\n        \"description\": \"\",\n        \"startDate\": \"\",\n        \"endDate\": \"\",\n        \"numberOfRecipes\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getWinnerRecipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/challenges/:challengeId/winners",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"challenges",
+								":challengeId",
+								"winners"
+							],
+							"variable": [
+								{
+									"key": "challengeId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getWinnerRecipes-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/challenges/:challengeId/winners",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"challenges",
+										":challengeId",
+										"winners"
+									],
+									"variable": [
+										{
+											"key": "challengeId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"recipeId\": 0,\n        \"title\": \"\",\n        \"description\": \"\",\n        \"category\": \"\",\n        \"viewCount\": 0,\n        \"ingredients\": [\n            \"\"\n        ],\n        \"instructions\": \"\",\n        \"creationDate\": \"\",\n        \"author\": { //Relationships\n            \"userId\": 0,\n            \"username\": \"\",\n            \"email\": \"\",\n            \"password\": \"\",\n            \"bio\": \"\",\n            \"recipes\": [\n                {\n                    \"recipeId\": 0,\n                    \"title\": \"\",\n                    \"description\": \"\",\n                    \"category\": \"\",\n                    \"viewCount\": 0,\n                    \"ingredients\": [\n                        \"\"\n                    ],\n                    \"instructions\": \"\",\n                    \"creationDate\": \"\",\n                    \"author\": { //Relationships\n                        \"userId\": 0,\n                        \"username\": \"\",\n                        \"email\": \"\",\n                        \"password\": \"\",\n                        \"bio\": \"\",\n                        \"recipes\": [],\n                        \"comments\": [\n                            {\n                                \"commentId\": 0,\n                                \"text\": \"\",\n                                \"creationTime\": \"\",\n                                \"recipe\": {}, //Relationships\n                                \"user\": {}\n                            }\n                        ],\n                        \"ratings\": [\n                            {\n                                \"ratingId\": 0,\n                                \"score\": 0,\n                                \"recipe\": {},\n                                \"user\": {}\n                            }\n                        ],\n                        \"discussions\": [\n                            {\n                                \"discussionId\": 0,\n                                \"title\": \"\",\n                                \"description\": \"\",\n                                \"creationDate\": \"\",\n                                \"user\": {},\n                                \"replies\": [\n                                    {\n                                        \"replyId\": 0,\n                                        \"text\": \"\",\n                                        \"creationTime\": \"\",\n                                        \"user\": {},\n                                        \"discussion\": {}\n                                    }\n                                ]\n                            }\n                        ],\n                        \"replies\": [\n                            {\n                                \"replyId\": 0,\n                                \"text\": \"\",\n                                \"creationTime\": \"\",\n                                \"user\": {},\n                                \"discussion\": {\n                                    \"discussionId\": 0,\n                                    \"title\": \"\",\n                                    \"description\": \"\",\n                                    \"creationDate\": \"\",\n                                    \"user\": {},\n                                    \"replies\": []\n                                }\n                            }\n                        ],\n                        \"challenges\": [\n                            {\n                                \"challengeId\": 0,\n                                \"title\": \"\",\n                                \"description\": \"\",\n                                \"startDate\": \"\",\n                                \"endDate\": \"\",\n                                \"recipes\": [], //Relationships\n                                \"users\": [\n                                    {}\n                                ]\n                            }\n                        ]\n                    },\n                    \"challenge\": {\n                        \"challengeId\": 0,\n                        \"title\": \"\",\n                        \"description\": \"\",\n                        \"startDate\": \"\",\n                        \"endDate\": \"\",\n                        \"recipes\": [], //Relationships\n                        \"users\": [\n                            {\n                                \"userId\": 0,\n                                \"username\": \"\",\n                                \"email\": \"\",\n                                \"password\": \"\",\n                                \"bio\": \"\",\n                                \"recipes\": [],\n                                \"comments\": [\n                                    {\n                                        \"commentId\": 0,\n                                        \"text\": \"\",\n                                        \"creationTime\": \"\",\n                                        \"recipe\": {}, //Relationships\n                                        \"user\": {}\n                                    }\n                                ],\n                                \"ratings\": [\n                                    {\n                                        \"ratingId\": 0,\n                                        \"score\": 0,\n                                        \"recipe\": {},\n                                        \"user\": {}\n                                    }\n                                ],\n                                \"discussions\": [\n                                    {\n                                        \"discussionId\": 0,\n                                        \"title\": \"\",\n                                        \"description\": \"\",\n                                        \"creationDate\": \"\",\n                                        \"user\": {},\n                                        \"replies\": [\n                                            {\n                                                \"replyId\": 0,\n                                                \"text\": \"\",\n                                                \"creationTime\": \"\",\n                                                \"user\": {},\n                                                \"discussion\": {}\n                                            }\n                                        ]\n                                    }\n                                ],\n                                \"replies\": [\n                                    {\n                                        \"replyId\": 0,\n                                        \"text\": \"\",\n                                        \"creationTime\": \"\",\n                                        \"user\": {},\n                                        \"discussion\": {\n                                            \"discussionId\": 0,\n                                            \"title\": \"\",\n                                            \"description\": \"\",\n                                            \"creationDate\": \"\",\n                                            \"user\": {},\n                                            \"replies\": []\n                                        }\n                                    }\n                                ],\n                                \"challenges\": [\n                                    {}\n                                ]\n                            }\n                        ]\n                    },\n                    \"comments\": [\n                        {\n                            \"commentId\": 0,\n                            \"text\": \"\",\n                            \"creationTime\": \"\",\n                            \"recipe\": {}, //Relationships\n                            \"user\": {\n                                \"userId\": 0,\n                                \"username\": \"\",\n                                \"email\": \"\",\n                                \"password\": \"\",\n                                \"bio\": \"\",\n                                \"recipes\": [],\n                                \"comments\": [],\n                                \"ratings\": [\n                                    {\n                                        \"ratingId\": 0,\n                                        \"score\": 0,\n                                        \"recipe\": {},\n                                        \"user\": {}\n                                    }\n                                ],\n                                \"discussions\": [\n                                    {\n                                        \"discussionId\": 0,\n                                        \"title\": \"\",\n                                        \"description\": \"\",\n                                        \"creationDate\": \"\",\n                                        \"user\": {},\n                                        \"replies\": [\n                                            {\n                                                \"replyId\": 0,\n                                                \"text\": \"\",\n                                                \"creationTime\": \"\",\n                                                \"user\": {},\n                                                \"discussion\": {}\n                                            }\n                                        ]\n                                    }\n                                ],\n                                \"replies\": [\n                                    {\n                                        \"replyId\": 0,\n                                        \"text\": \"\",\n                                        \"creationTime\": \"\",\n                                        \"user\": {},\n                                        \"discussion\": {\n                                            \"discussionId\": 0,\n                                            \"title\": \"\",\n                                            \"description\": \"\",\n                                            \"creationDate\": \"\",\n                                            \"user\": {},\n                                            \"replies\": []\n                                        }\n                                    }\n                                ],\n                                \"challenges\": [\n                                    {\n                                        \"challengeId\": 0,\n                                        \"title\": \"\",\n                                        \"description\": \"\",\n                                        \"startDate\": \"\",\n                                        \"endDate\": \"\",\n                                        \"recipes\": [], //Relationships\n                                        \"users\": [\n                                            {}\n                                        ]\n                                    }\n                                ]\n                            }\n                        }\n                    ],\n                    \"ratings\": [\n                        {\n                            \"ratingId\": 0,\n                            \"score\": 0,\n                            \"recipe\": {},\n                            \"user\": {\n                                \"userId\": 0,\n                                \"username\": \"\",\n                                \"email\": \"\",\n                                \"password\": \"\",\n                                \"bio\": \"\",\n                                \"recipes\": [],\n                                \"comments\": [\n                                    {\n                                        \"commentId\": 0,\n                                        \"text\": \"\",\n                                        \"creationTime\": \"\",\n                                        \"recipe\": {}, //Relationships\n                                        \"user\": {}\n                                    }\n                                ],\n                                \"ratings\": [],\n                                \"discussions\": [\n                                    {\n                                        \"discussionId\": 0,\n                                        \"title\": \"\",\n                                        \"description\": \"\",\n                                        \"creationDate\": \"\",\n                                        \"user\": {},\n                                        \"replies\": [\n                                            {\n                                                \"replyId\": 0,\n                                                \"text\": \"\",\n                                                \"creationTime\": \"\",\n                                                \"user\": {},\n                                                \"discussion\": {}\n                                            }\n                                        ]\n                                    }\n                                ],\n                                \"replies\": [\n                                    {\n                                        \"replyId\": 0,\n                                        \"text\": \"\",\n                                        \"creationTime\": \"\",\n                                        \"user\": {},\n                                        \"discussion\": {\n                                            \"discussionId\": 0,\n                                            \"title\": \"\",\n                                            \"description\": \"\",\n                                            \"creationDate\": \"\",\n                                            \"user\": {},\n                                            \"replies\": []\n                                        }\n                                    }\n                                ],\n                                \"challenges\": [\n                                    {\n                                        \"challengeId\": 0,\n                                        \"title\": \"\",\n                                        \"description\": \"\",\n                                        \"startDate\": \"\",\n                                        \"endDate\": \"\",\n                                        \"recipes\": [], //Relationships\n                                        \"users\": [\n                                            {}\n                                        ]\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            ],\n            \"comments\": [\n                {\n                    \"commentId\": 0,\n                    \"text\": \"\",\n                    \"creationTime\": \"\",\n                    \"recipe\": { //Relationships\n                        \"recipeId\": 0,\n                        \"title\": \"\",\n                        \"description\": \"\",\n                        \"category\": \"\",\n                        \"viewCount\": 0,\n                        \"ingredients\": [\n                            \"\"\n                        ],\n                        \"instructions\": \"\",\n                        \"creationDate\": \"\",\n                        \"author\": { //Relationships\n                            \"userId\": 0,\n                            \"username\": \"\",\n                            \"email\": \"\",\n                            \"password\": \"\",\n                            \"bio\": \"\",\n                            \"recipes\": [\n                                {}\n                            ],\n                            \"comments\": [\n                                {\n                                    \"commentId\": 0,\n                                    \"text\": \"\",\n                                    \"creationTime\": \"\",\n                                    \"recipe\": {}, //Relationships\n                                    \"user\": {}\n                                }\n                            ],\n                            \"ratings\": [\n                                {\n                                    \"ratingId\": 0,\n                                    \"score\": 0,\n                                    \"recipe\": {},\n                                    \"user\": {}\n                                }\n                            ],\n                            \"discussions\": [\n                                {\n                                    \"discussionId\": 0,\n                                    \"title\": \"\",\n                                    \"description\": \"\",\n                                    \"creationDate\": \"\",\n                                    \"user\": {},\n                                    \"replies\": [\n                                        {\n                                            \"replyId\": 0,\n                                            \"text\": \"\",\n                                            \"creationTime\": \"\",\n                                            \"user\": {},\n                                            \"discussion\": {}\n                                        }\n                                    ]\n                                }\n                            ],\n                            \"replies\": [\n                                {\n                                    \"replyId\": 0,\n                                    \"text\": \"\",\n                                    \"creationTime\": \"\",\n                                    \"user\": {},\n                                    \"discussion\": {\n                                        \"discussionId\": 0,\n                                        \"title\": \"\",\n                                        \"description\": \"\",\n                                        \"creationDate\": \"\",\n                                        \"user\": {},\n                                        \"replies\": []\n                                    }\n                                }\n                            ],\n                            \"challenges\": [\n                                {\n                                    \"challengeId\": 0,\n                                    \"title\": \"\",\n                                    \"description\": \"\",\n                                    \"startDate\": \"\",\n                                    \"endDate\": \"\",\n                                    \"recipes\": [ //Relationships\n                                        {}\n                                    ],\n                                    \"users\": [\n                                        {}\n                                    ]\n                                }\n                            ]\n                        },\n                        \"challenge\": {\n                            \"challengeId\": 0,\n                            \"title\": \"\",\n                            \"description\": \"\",\n                            \"startDate\": \"\",\n                            \"endDate\": \"\",\n                            \"recipes\": [ //Relationships\n                                {}\n                            ],\n                            \"users\": [\n                                {\n                                    \"userId\": 0,\n                                    \"username\": \"\",\n                                    \"email\": \"\",\n                                    \"password\": \"\",\n                                    \"bio\": \"\",\n                                    \"recipes\": [\n                                        {}\n                                    ],\n                                    \"comments\": [\n                                        {\n                                            \"commentId\": 0,\n                                            \"text\": \"\",\n                                            \"creationTime\": \"\",\n                                            \"recipe\": {}, //Relationships\n                                            \"user\": {}\n                                        }\n                                    ],\n                                    \"ratings\": [\n                                        {\n                                            \"ratingId\": 0,\n                                            \"score\": 0,\n                                            \"recipe\": {},\n                                            \"user\": {}\n                                        }\n                                    ],\n                                    \"discussions\": [\n                                        {\n                                            \"discussionId\": 0,\n                                            \"title\": \"\",\n                                            \"description\": \"\",\n                                            \"creationDate\": \"\",\n                                            \"user\": {},\n                                            \"replies\": [\n                                                {\n                                                    \"replyId\": 0,\n                                                    \"text\": \"\",\n                                                    \"creationTime\": \"\",\n                                                    \"user\": {},\n                                                    \"discussion\": {}\n                                                }\n                                            ]\n                                        }\n                                    ],\n                                    \"replies\": [\n                                        {\n                                            \"replyId\": 0,\n                                            \"text\": \"\",\n                                            \"creationTime\": \"\",\n                                            \"user\": {},\n                                            \"discussion\": {\n                                                \"discussionId\": 0,\n                                                \"title\": \"\",\n                                                \"description\": \"\",\n                                                \"creationDate\": \"\",\n                                                \"user\": {},\n                                                \"replies\": []\n                                            }\n                                        }\n                                    ],\n                                    \"challenges\": [\n                                        {}\n                                    ]\n                                }\n                            ]\n                        },\n                        \"comments\": [\n                            {\n                                \"commentId\": 0,\n                                \"text\": \"\",\n                                \"creationTime\": \"\",\n                                \"recipe\": {}, //Relationships\n                                \"user\": {\n                                    \"userId\": 0,\n                                    \"username\": \"\",\n                                    \"email\": \"\",\n                                    \"password\": \"\",\n                                    \"bio\": \"\",\n                                    \"recipes\": [\n                                        {}\n                                    ],\n                                    \"comments\": [],\n                                    \"ratings\": [\n                                        {\n                                            \"ratingId\": 0,\n                                            \"score\": 0,\n                                            \"recipe\": {},\n                                            \"user\": {}\n                                        }\n                                    ],\n                                    \"discussions\": [\n                                        {\n                                            \"discussionId\": 0,\n                                            \"title\": \"\",\n                                            \"description\": \"\",\n                                            \"creationDate\": \"\",\n                                            \"user\": {},\n                                            \"replies\": [\n                                                {\n                                                    \"replyId\": 0,\n                                                    \"text\": \"\",\n                                                    \"creationTime\": \"\",\n                                                    \"user\": {},\n                                                    \"discussion\": {}\n                                                }\n                                            ]\n                                        }\n                                    ],\n                                    \"replies\": [\n                                        {\n                                            \"replyId\": 0,\n                                            \"text\": \"\",\n                                            \"creationTime\": \"\",\n                                            \"user\": {},\n                                            \"discussion\": {\n                                                \"discussionId\": 0,\n                                                \"title\": \"\",\n                                                \"description\": \"\",\n                                                \"creationDate\": \"\",\n                                                \"user\": {},\n                                                \"replies\": []\n                                            }\n                                        }\n                                    ],\n                                    \"challenges\": [\n                                        {\n                                            \"challengeId\": 0,\n                                            \"title\": \"\",\n                                            \"description\": \"\",\n                                            \"startDate\": \"\",\n                                            \"endDate\": \"\",\n                                            \"recipes\": [ //Relationships\n                                                {}\n                                            ],\n                                            \"users\": [\n                                                {}\n                                            ]\n                                        }\n                                    ]\n                                }\n                            }\n                        ],\n                        \"ratings\": [\n                            {\n                                \"ratingId\": 0,\n                                \"score\": 0,\n                                \"recipe\": {},\n                                \"user\": {\n                                    \"userId\": 0,\n                                    \"username\": \"\",\n                                    \"email\": \"\",\n                                    \"password\": \"\",\n                                    \"bio\": \"\",\n                                    \"recipes\": [\n                                        {}\n                                    ],\n                                    \"comments\": [\n                                        {\n                                            \"commentId\": 0,\n                                            \"text\": \"\",\n                                            \"creationTime\": \"\",\n                                            \"recipe\": {}, //Relationships\n                                            \"user\": {}\n                                        }\n                                    ],\n                                    \"ratings\": [],\n                                    \"discussions\": [\n                                        {\n                                            \"discussionId\": 0,\n                                            \"title\": \"\",\n                                            \"description\": \"\",\n                                            \"creationDate\": \"\",\n                                            \"user\": {},\n                                            \"replies\": [\n                                                {\n                                                    \"replyId\": 0,\n                                                    \"text\": \"\",\n                                                    \"creationTime\": \"\",\n                                                    \"user\": {},\n                                                    \"discussion\": {}\n                                                }\n                                            ]\n                                        }\n                                    ],\n                                    \"replies\": [\n                                        {\n                                            \"replyId\": 0,\n                                            \"text\": \"\",\n                                            \"creationTime\": \"\",\n                                            \"user\": {},\n                                            \"discussion\": {\n                                                \"discussionId\": 0,\n                                                \"title\": \"\",\n                                                \"description\": \"\",\n                                                \"creationDate\": \"\",\n                                                \"user\": {},\n                                                \"replies\": []\n                                            }\n                                        }\n                                    ],\n                                    \"challenges\": [\n                                        {\n                                            \"challengeId\": 0,\n                                            \"title\": \"\",\n                                            \"description\": \"\",\n                                            \"startDate\": \"\",\n                                            \"endDate\": \"\",\n                                            \"recipes\": [ //Relationships\n                                                {}\n                                            ],\n                                            \"users\": [\n                                                {}\n                                            ]\n                                        }\n                                    ]\n                                }\n                            }\n                        ]\n                    },\n                    \"user\": {\n                        \"userId\": 0,\n                        \"username\": \"\",\n                        \"email\": \"\",\n                        \"password\": \"\",\n                        \"bio\": \"\",\n                        \"recipes\": [\n                            {\n                                \"recipeId\": 0,\n                                \"title\": \"\",\n                                \"description\": \"\",\n                                \"category\": \"\",\n                                \"viewCount\": 0,\n                                \"ingredients\": [\n                                    \"\"\n                                ],\n                                \"instructions\": \"\",\n                                \"creationDate\": \"\",\n                                \"author\": {}, //Relationships\n                                \"challenge\": {\n                                    \"challengeId\": 0,\n                                    \"title\": \"\",\n                                    \"description\": \"\",\n                                    \"startDate\": \"\",\n                                    \"endDate\": \"\",\n                                    \"recipes\": [], //Relationships\n                                    \"users\": [\n                                        {}\n                                    ]\n                                },\n                                \"comments\": [\n                                    {\n                                        \"commentId\": 0,\n                                        \"text\": \"\",\n                                        \"creationTime\": \"\",\n                                        \"recipe\": {}, //Relationships\n                                        \"user\": {}\n                                    }\n                                ],\n                                \"ratings\": [\n                                    {\n                                        \"ratingId\": 0,\n                                        \"score\": 0,\n                                        \"recipe\": {},\n                                        \"user\": {}\n                                    }\n                                ]\n                            }\n                        ],\n                        \"comments\": [\n                            {\n                                \"commentId\": 0,\n                                \"text\": \"\",\n                                \"creationTime\": \"\",\n                                \"recipe\": { //Relationships\n                                    \"recipeId\": 0,\n                                    \"title\": \"\",\n                                    \"description\": \"\",\n                                    \"category\": \"\",\n                                    \"viewCount\": 0,\n                                    \"ingredients\": [\n                                        \"\"\n                                    ],\n                                    \"instructions\": \"\",\n                                    \"creationDate\": \"\",\n                                    \"author\": {}, //Relationships\n                                    \"challenge\": {\n                                        \"challengeId\": 0,\n                                        \"title\": \"\",\n                                        \"description\": \"\",\n                                        \"startDate\": \"\",\n                                        \"endDate\": \"\",\n                                        \"recipes\": [ //Relationships\n                                            {}\n                                        ],\n                                        \"users\": [\n                                            {}\n                                        ]\n                                    },\n                                    \"comments\": [],\n                                    \"ratings\": [\n                                        {\n                                            \"ratingId\": 0,\n                                            \"score\": 0,\n                                            \"recipe\": {},\n                                            \"user\": {}\n                                        }\n                                    ]\n                                },\n                                \"user\": {}\n                            }\n                        ],\n                        \"ratings\": [\n                            {\n                                \"ratingId\": 0,\n                                \"score\": 0,\n                                \"recipe\": {\n                                    \"recipeId\": 0,\n                                    \"title\": \"\",\n                                    \"description\": \"\",\n                                    \"category\": \"\",\n                                    \"viewCount\": 0,\n                                    \"ingredients\": [\n                                        \"\"\n                                    ],\n                                    \"instructions\": \"\",\n                                    \"creationDate\": \"\",\n                                    \"author\": {}, //Relationships\n                                    \"challenge\": {\n                                        \"challengeId\": 0,\n                                        \"title\": \"\",\n                                        \"description\": \"\",\n                                        \"startDate\": \"\",\n                                        \"endDate\": \"\",\n                                        \"recipes\": [ //Relationships\n                                            {}\n                                        ],\n                                        \"users\": [\n                                            {}\n                                        ]\n                                    },\n                                    \"comments\": [\n                                        {\n                                            \"commentId\": 0,\n                                            \"text\": \"\",\n                                            \"creationTime\": \"\",\n                                            \"recipe\": {}, //Relationships\n                                            \"user\": {}\n                                        }\n                                    ],\n                                    \"ratings\": []\n                                },\n                                \"user\": {}\n                            }\n                        ],\n                        \"discussions\": [\n                            {\n                                \"discussionId\": 0,\n                                \"title\": \"\",\n                                \"description\": \"\",\n                                \"creationDate\": \"\",\n                                \"user\": {},\n                                \"replies\": [\n                                    {\n                                        \"replyId\": 0,\n                                        \"text\": \"\",\n                                        \"creationTime\": \"\",\n                                        \"user\": {},\n                                        \"discussion\": {}\n                                    }\n                                ]\n                            }\n                        ],\n                        \"replies\": [\n                            {\n                                \"replyId\": 0,\n                                \"text\": \"\",\n                                \"creationTime\": \"\",\n                                \"user\": {},\n                                \"discussion\": {\n                                    \"discussionId\": 0,\n                                    \"title\": \"\",\n                                    \"description\": \"\",\n                                    \"creationDate\": \"\",\n                                    \"user\": {},\n                                    \"replies\": []\n                                }\n                            }\n                        ],\n                        \"challenges\": [\n                            {\n                                \"challengeId\": 0,\n                                \"title\": \"\",\n                                \"description\": \"\",\n                                \"startDate\": \"\",\n                                \"endDate\": \"\",\n                                \"recipes\": [ //Relationships\n                                    {\n                                        \"recipeId\": 0,\n                                        \"title\": \"\",\n                                        \"description\": \"\",\n                                        \"category\": \"\",\n                                        \"viewCount\": 0,\n                                        \"ingredients\": [\n                                            \"\"\n                                        ],\n                                        \"instructions\": \"\",\n                                        \"creationDate\": \"\",\n                                        \"author\": {}, //Relationships\n                                        \"challenge\": {},\n                                        \"comments\": [\n                                            {\n                                                \"commentId\": 0,\n                                                \"text\": \"\",\n                                                \"creationTime\": \"\",\n                                                \"recipe\": {}, //Relationships\n                                                \"user\": {}\n                                            }\n                                        ],\n                                        \"ratings\": [\n                                            {\n                                                \"ratingId\": 0,\n                                                \"score\": 0,\n                                                \"recipe\": {},\n                                                \"user\": {}\n                                            }\n                                        ]\n                                    }\n                                ],\n                                \"users\": [\n                                    {}\n                                ]\n                            }\n                        ]\n                    }\n                }\n            ],\n            \"ratings\": [\n                {\n                    \"ratingId\": 0,\n                    \"score\": 0,\n                    \"recipe\": {\n                        \"recipeId\": 0,\n                        \"title\": \"\",\n                        \"description\": \"\",\n                        \"category\": \"\",\n                        \"viewCount\": 0,\n                        \"ingredients\": [\n                            \"\"\n                        ],\n                        \"instructions\": \"\",\n                        \"creationDate\": \"\",\n                        \"author\": { //Relationships\n                            \"userId\": 0,\n                            \"username\": \"\",\n                            \"email\": \"\",\n                            \"password\": \"\",\n                            \"bio\": \"\",\n                            \"recipes\": [\n                                {}\n                            ],\n                            \"comments\": [\n                                {\n                                    \"commentId\": 0,\n                                    \"text\": \"\",\n                                    \"creationTime\": \"\",\n                                    \"recipe\": { //Relationships\n                                        \"recipeId\": 0,\n                                        \"title\": \"\",\n                                        \"description\": \"\",\n                                        \"category\": \"\",\n                                        \"viewCount\": 0,\n                                        \"ingredients\": [\n                                            \"\"\n                                        ],\n                                        \"instructions\": \"\",\n                                        \"creationDate\": \"\",\n                                        \"author\": { //Relationships\n                                            \"userId\": 0,\n                                            \"username\": \"\",\n                                            \"email\": \"\",\n                                            \"password\": \"\",\n                                            \"bio\": \"\",\n                                            \"recipes\": [\n                                                {}\n                                            ],\n                                            \"comments\": [\n                                                {\n                                                    \"commentId\": 0,\n                                                    \"text\": \"\",\n                                                    \"creationTime\": \"\",\n                                                    \"recipe\": {}, //Relationships\n                                                    \"user\": {}\n                                                }\n                                            ],\n                                            \"ratings\": [\n                                                {\n                                                    \"ratingId\": 0,\n                                                    \"score\": 0,\n                                                    \"recipe\": {},\n                                                    \"user\": {}\n                                                }\n                                            ],\n                                            \"discussions\": [\n                                                {\n                                                    \"discussionId\": 0,\n                                                    \"title\": \"\",\n                                                    \"description\": \"\",\n                                                    \"creationDate\": \"\",\n                                                    \"user\": {},\n                                                    \"replies\": [\n                                                        {\n                                                            \"replyId\": 0,\n                                                            \"text\": \"\",\n                                                            \"creationTime\": \"\",\n                                                            \"user\": {},\n                                                            \"discussion\": {}\n                                                        }\n                                                    ]\n                                                }\n                                            ],\n                                            \"replies\": [\n                                                {\n                                                    \"replyId\": 0,\n                                                    \"text\": \"\",\n                                                    \"creationTime\": \"\",\n                                                    \"user\": {},\n                                                    \"discussion\": {\n                                                        \"discussionId\": 0,\n                                                        \"title\": \"\",\n                                                        \"description\": \"\",\n                                                        \"creationDate\": \"\",\n                                                        \"user\": {},\n                                                        \"replies\": []\n                                                    }\n                                                }\n                                            ],\n                                            \"challenges\": [\n                                                {\n                                                    \"challengeId\": 0,\n                                                    \"title\": \"\",\n                                                    \"description\": \"\",\n                                                    \"startDate\": \"\",\n                                                    \"endDate\": \"\",\n                                                    \"recipes\": [ //Relationships\n                                                        {}\n                                                    ],\n                                                    \"users\": [\n                                                        {}\n                                                    ]\n                                                }\n                                            ]\n                                        },\n                                        \"challenge\": {\n                                            \"challengeId\": 0,\n                                            \"title\": \"\",\n                                            \"description\": \"\",\n                                            \"startDate\": \"\",\n                                            \"endDate\": \"\",\n                                            \"recipes\": [ //Relationships\n                                                {}\n                                            ],\n                                            \"users\": [\n                                                {\n                                                    \"userId\": 0,\n                                                    \"username\": \"\",\n                                                    \"email\": \"\",\n                                                    \"password\": \"\",\n                                                    \"bio\": \"\",\n                                                    \"recipes\": [\n                                                        {}\n                                                    ],\n                                                    \"comments\": [\n                                                        {\n                                                            \"commentId\": 0,\n                                                            \"text\": \"\",\n                                                            \"creationTime\": \"\",\n                                                            \"recipe\": {}, //Relationships\n                                                            \"user\": {}\n                                                        }\n                                                    ],\n                                                    \"ratings\": [\n                                                        {\n                                                            \"ratingId\": 0,\n                                                            \"score\": 0,\n                                                            \"recipe\": {},\n                                                            \"user\": {}\n                                                        }\n                                                    ],\n                                                    \"discussions\": [\n                                                        {\n                                                            \"discussionId\": 0,\n                                                            \"title\": \"\",\n                                                            \"description\": \"\",\n                                                            \"creationDate\": \"\",\n                                                            \"user\": {},\n                                                            \"replies\": [\n                                                                {\n                                                                    \"replyId\": 0,\n                                                                    \"text\": \"\",\n                                                                    \"creationTime\": \"\",\n                                                                    \"user\": {},\n                                                                    \"discussion\": {}\n                                                                }\n                                                            ]\n                                                        }\n                                                    ],\n                                                    \"replies\": [\n                                                        {\n                                                            \"replyId\": 0,\n                                                            \"text\": \"\",\n                                                            \"creationTime\": \"\",\n                                                            \"user\": {},\n                                                            \"discussion\": {\n                                                                \"discussionId\": 0,\n                                                                \"title\": \"\",\n                                                                \"description\": \"\",\n                                                                \"creationDate\": \"\",\n                                                                \"user\": {},\n                                                                \"replies\": []\n                                                            }\n                                                        }\n                                                    ],\n                                                    \"challenges\": [\n                                                        {}\n                                                    ]\n                                                }\n                                            ]\n                                        },\n                                        \"comments\": [\n                                            {\n                                                \"commentId\": 0,\n                                                \"text\": \"\",\n                                                \"creationTime\": \"\",\n                                                \"recipe\": {}, //Relationships\n                                                \"user\": {\n                                                    \"userId\": 0,\n                                                    \"username\": \"\",\n                                                    \"email\": \"\",\n                                                    \"password\": \"\",\n                                                    \"bio\": \"\",\n                                                    \"recipes\": [\n                                                        {}\n                                                    ],\n                                                    \"comments\": [],\n                                                    \"ratings\": [\n                                                        {\n                                                            \"ratingId\": 0,\n                                                            \"score\": 0,\n                                                            \"recipe\": {},\n                                                            \"user\": {}\n                                                        }\n                                                    ],\n                                                    \"discussions\": [\n                                                        {\n                                                            \"discussionId\": 0,\n                                                            \"title\": \"\",\n                                                            \"description\": \"\",\n                                                            \"creationDate\": \"\",\n                                                            \"user\": {},\n                                                            \"replies\": [\n                                                                {\n                                                                    \"replyId\": 0,\n                                                                    \"text\": \"\",\n                                                                    \"creationTime\": \"\",\n                                                                    \"user\": {},\n                                                                    \"discussion\": {}\n                                                                }\n                                                            ]\n                                                        }\n                                                    ],\n                                                    \"replies\": [\n                                                        {\n                                                            \"replyId\": 0,\n                                                            \"text\": \"\",\n                                                            \"creationTime\": \"\",\n                                                            \"user\": {},\n                                                            \"discussion\": {\n                                                                \"discussionId\": 0,\n                                                                \"title\": \"\",\n                                                                \"description\": \"\",\n                                                                \"creationDate\": \"\",\n                                                                \"user\": {},\n                                                                \"replies\": []\n                                                            }\n                                                        }\n                                                    ],\n                                                    \"challenges\": [\n                                                        {\n                                                            \"challengeId\": 0,\n                                                            \"title\": \"\",\n                                                            \"description\": \"\",\n                                                            \"startDate\": \"\",\n                                                            \"endDate\": \"\",\n                                                            \"recipes\": [ //Relationships\n                                                                {}\n                                                            ],\n                                                            \"users\": [\n                                                                {}\n                                                            ]\n                                                        }\n                                                    ]\n                                                }\n                                            }\n                                        ],\n                                        \"ratings\": [\n                                            {\n                                                \"ratingId\": 0,\n                                                \"score\": 0,\n                                                \"recipe\": {},\n                                                \"user\": {\n                                                    \"userId\": 0,\n                                                    \"username\": \"\",\n                                                    \"email\": \"\",\n                                                    \"password\": \"\",\n                                                    \"bio\": \"\",\n                                                    \"recipes\": [\n                                                        {}\n                                                    ],\n                                                    \"comments\": [\n                                                        {\n                                                            \"commentId\": 0,\n                                                            \"text\": \"\",\n                                                            \"creationTime\": \"\",\n                                                            \"recipe\": {}, //Relationships\n                                                            \"user\": {}\n                                                        }\n                                                    ],\n                                                    \"ratings\": [],\n                                                    \"discussions\": [\n                                                        {\n                                                            \"discussionId\": 0,\n                                                            \"title\": \"\",\n                                                            \"description\": \"\",\n                                                            \"creationDate\": \"\",\n                                                            \"user\": {},\n                                                            \"replies\": [\n                                                                {\n                                                                    \"replyId\": 0,\n                                                                    \"text\": \"\",\n                                                                    \"creationTime\": \"\",\n                                                                    \"user\": {},\n                                                                    \"discussion\": {}\n                                                                }\n                                                            ]\n                                                        }\n                                                    ],\n                                                    \"replies\": [\n                                                        {\n                                                            \"replyId\": 0,\n                                                            \"text\": \"\",\n                                                            \"creationTime\": \"\",\n                                                            \"user\": {},\n                                                            \"discussion\": {\n                                                                \"discussionId\": 0,\n                                                                \"title\": \"\",\n                                                                \"description\": \"\",\n                                                                \"creationDate\": \"\",\n                                                                \"user\": {},\n                                                                \"replies\": []\n                                                            }\n                                                        }\n                                                    ],\n                                                    \"challenges\": [\n                                                        {\n                                                            \"challengeId\": 0,\n                                                            \"title\": \"\",\n                                                            \"description\": \"\",\n                                                            \"startDate\": \"\",\n                                                            \"endDate\": \"\",\n                                                            \"recipes\": [ //Relationships\n                                                                {}\n                                                            ],\n                                                            \"users\": [\n                                                                {}\n                                                            ]\n                                                        }\n                                                    ]\n                                                }\n                                            }\n                                        ]\n                                    },\n                                    \"user\": {\n                                        \"userId\": 0,\n                                        \"username\": \"\",\n                                        \"email\": \"\",\n                                        \"password\": \"\",\n                                        \"bio\": \"\",\n                                        \"recipes\": [\n                                            {\n                                                \"recipeId\": 0,\n                                                \"title\": \"\",\n                                                \"description\": \"\",\n                                                \"category\": \"\",\n                                                \"viewCount\": 0,\n                                                \"ingredients\": [\n                                                    \"\"\n                                                ],\n                                                \"instructions\": \"\",\n                                                \"creationDate\": \"\",\n                                                \"author\": {}, //Relationships\n                                                \"challenge\": {\n                                                    \"challengeId\": 0,\n                                                    \"title\": \"\",\n                                                    \"description\": \"\",\n                                                    \"startDate\": \"\",\n                                                    \"endDate\": \"\",\n                                                    \"recipes\": [], //Relationships\n                                                    \"users\": [\n                                                        {}\n                                                    ]\n                                                },\n                                                \"comments\": [\n                                                    {\n                                                        \"commentId\": 0,\n                                                        \"text\": \"\",\n                                                        \"creationTime\": \"\",\n                                                        \"recipe\": {}, //Relationships\n                                                        \"user\": {}\n                                                    }\n                                                ],\n                                                \"ratings\": [\n                                                    {\n                                                        \"ratingId\": 0,\n                                                        \"score\": 0,\n                                                        \"recipe\": {},\n                                                        \"user\": {}\n                                                    }\n                                                ]\n                                            }\n                                        ],\n                                        \"comments\": [\n                                            {\n                                                \"commentId\": 0,\n                                                \"text\": \"\",\n                                                \"creationTime\": \"\",\n                                                \"recipe\": { //Relationships\n                                                    \"recipeId\": 0,\n                                                    \"title\": \"\",\n                                                    \"description\": \"\",\n                                                    \"category\": \"\",\n                                                    \"viewCount\": 0,\n                                                    \"ingredients\": [\n                                                        \"\"\n                                                    ],\n                                                    \"instructions\": \"\",\n                                                    \"creationDate\": \"\",\n                                                    \"author\": {}, //Relationships\n                                                    \"challenge\": {\n                                                        \"challengeId\": 0,\n                                                        \"title\": \"\",\n                                                        \"description\": \"\",\n                                                        \"startDate\": \"\",\n                                                        \"endDate\": \"\",\n                                                        \"recipes\": [ //Relationships\n                                                            {}\n                                                        ],\n                                                        \"users\": [\n                                                            {}\n                                                        ]\n                                                    },\n                                                    \"comments\": [],\n                                                    \"ratings\": [\n                                                        {\n                                                            \"ratingId\": 0,\n                                                            \"score\": 0,\n                                                            \"recipe\": {},\n                                                            \"user\": {}\n                                                        }\n                                                    ]\n                                                },\n                                                \"user\": {}\n                                            }\n                                        ],\n                                        \"ratings\": [\n                                            {\n                                                \"ratingId\": 0,\n                                                \"score\": 0,\n                                                \"recipe\": {\n                                                    \"recipeId\": 0,\n                                                    \"title\": \"\",\n                                                    \"description\": \"\",\n                                                    \"category\": \"\",\n                                                    \"viewCount\": 0,\n                                                    \"ingredients\": [\n                                                        \"\"\n                                                    ],\n                                                    \"instructions\": \"\",\n                                                    \"creationDate\": \"\",\n                                                    \"author\": {}, //Relationships\n                                                    \"challenge\": {\n                                                        \"challengeId\": 0,\n                                                        \"title\": \"\",\n                                                        \"description\": \"\",\n                                                        \"startDate\": \"\",\n                                                        \"endDate\": \"\",\n                                                        \"recipes\": [ //Relationships\n                                                            {}\n                                                        ],\n                                                        \"users\": [\n                                                            {}\n                                                        ]\n                                                    },\n                                                    \"comments\": [\n                                                        {\n                                                            \"commentId\": 0,\n                                                            \"text\": \"\",\n                                                            \"creationTime\": \"\",\n                                                            \"recipe\": {}, //Relationships\n                                                            \"user\": {}\n                                                        }\n                                                    ],\n                                                    \"ratings\": []\n                                                },\n                                                \"user\": {}\n                                            }\n                                        ],\n                                        \"discussions\": [\n                                            {\n                                                \"discussionId\": 0,\n                                                \"title\": \"\",\n                                                \"description\": \"\",\n                                                \"creationDate\": \"\",\n                                                \"user\": {},\n                                                \"replies\": [\n                                                    {\n                                                        \"replyId\": 0,\n                                                        \"text\": \"\",\n                                                        \"creationTime\": \"\",\n                                                        \"user\": {},\n                                                        \"discussion\": {}\n                                                    }\n                                                ]\n                                            }\n                                        ],\n                                        \"replies\": [\n                                            {\n                                                \"replyId\": 0,\n                                                \"text\": \"\",\n                                                \"creationTime\": \"\",\n                                                \"user\": {},\n                                                \"discussion\": {\n                                                    \"discussionId\": 0,\n                                                    \"title\": \"\",\n                                                    \"description\": \"\",\n                                                    \"creationDate\": \"\",\n                                                    \"user\": {},\n                                                    \"replies\": []\n                                                }\n                                            }\n                                        ],\n                                        \"challenges\": [\n                                            {\n                                                \"challengeId\": 0,\n                                                \"title\": \"\",\n                                                \"description\": \"\",\n                                                \"startDate\": \"\",\n                                                \"endDate\": \"\",\n                                                \"recipes\": [ //Relationships\n                                                    {\n                                                        \"recipeId\": 0,\n                                                        \"title\": \"\",\n                                                        \"description\": \"\",\n                                                        \"category\": \"\",\n                                                        \"viewCount\": 0,\n                                                        \"ingredients\": [\n                                                            \"\"\n                                                        ],\n                                                        \"instructions\": \"\",\n                                                        \"creationDate\": \"\",\n                                                        \"author\": {}, //Relationships\n                                                        \"challenge\": {},\n                                                        \"comments\": [\n                                                            {\n                                                                \"commentId\": 0,\n                                                                \"text\": \"\",\n                                                                \"creationTime\": \"\",\n                                                                \"recipe\": {}, //Relationships\n                                                                \"user\": {}\n                                                            }\n                                                        ],\n                                                        \"ratings\": [\n                                                            {\n                                                                \"ratingId\": 0,\n                                                                \"score\": 0,\n                                                                \"recipe\": {},\n                                                                \"user\": {}\n                                                            }\n                                                        ]\n                                                    }\n                                                ],\n                                                \"users\": [\n                                                    {}\n                                                ]\n                                            }\n                                        ]\n                                    }\n                                }\n                            ],\n                            \"ratings\": [\n                                {\n                                    \"ratingId\": 0,\n                                    \"score\": 0,\n                                    \"recipe\": {},\n                                    \"user\": {}\n                                }\n                            ],\n                            \"discussions\": [\n                                {\n                                    \"discussionId\": 0,\n                                    \"title\": \"\",\n                                    \"description\": \"\",\n                                    \"creationDate\": \"\",\n                                    \"user\": {},\n                                    \"replies\": [\n                                        {\n                                            \"replyId\": 0,\n                                            \"text\": \"\",\n                                            \"creationTime\": \"\",\n                                            \"user\": {},\n                                            \"discussion\": {}\n                                        }\n                                    ]\n                                }\n                            ],\n                            \"replies\": [\n                                {\n                                    \"replyId\": 0,\n                                    \"text\": \"\",\n                                    \"creationTime\": \"\",\n                                    \"user\": {},\n                                    \"discussion\": {\n                                        \"discussionId\": 0,\n                                        \"title\": \"\",\n                                        \"description\": \"\",\n                                        \"creationDate\": \"\",\n                                        \"user\": {},\n                                        \"replies\": []\n                                    }\n                                }\n                            ],\n                            \"challenges\": [\n                                {\n                                    \"challengeId\": 0,\n                                    \"title\": \"\",\n                                    \"description\": \"\",\n                                    \"startDate\": \"\",\n                                    \"endDate\": \"\",\n                                    \"recipes\": [ //Relationships\n                                        {}\n                                    ],\n                                    \"users\": [\n                                        {}\n                                    ]\n                                }\n                            ]\n                        },\n                        \"challenge\": {\n                            \"challengeId\": 0,\n                            \"title\": \"\",\n                            \"description\": \"\",\n                            \"startDate\": \"\",\n                            \"endDate\": \"\",\n                            \"recipes\": [ //Relationships\n                                {}\n                            ],\n                            \"users\": [\n                                {\n                                    \"userId\": 0,\n                                    \"username\": \"\",\n                                    \"email\": \"\",\n                                    \"password\": \"\",\n                                    \"bio\": \"\",\n                                    \"recipes\": [\n                                        {}\n                                    ],\n                                    \"comments\": [\n                                        {\n                                            \"commentId\": 0,\n                                            \"text\": \"\",\n                                            \"creationTime\": \"\",\n                                            \"recipe\": { //Relationships\n                                                \"recipeId\": 0,\n                                                \"title\": \"\",\n                                                \"description\": \"\",\n                                                \"category\": \"\",\n                                                \"viewCount\": 0,\n                                                \"ingredients\": [\n                                                    \"\"\n                                                ],\n                                                \"instructions\": \"\",\n                                                \"creationDate\": \"\",\n                                                \"author\": { //Relationships\n                                                    \"userId\": 0,\n                                                    \"username\": \"\",\n                                                    \"email\": \"\",\n                                                    \"password\": \"\",\n                                                    \"bio\": \"\",\n                                                    \"recipes\": [\n                                                        {}\n                                                    ],\n                                                    \"comments\": [\n                                                        {\n                                                            \"commentId\": 0,\n                                                            \"text\": \"\",\n                                                            \"creationTime\": \"\",\n                                                            \"recipe\": {}, //Relationships\n                                                            \"user\": {}\n                                                        }\n                                                    ],\n                                                    \"ratings\": [\n                                                        {\n                                                            \"ratingId\": 0,\n                                                            \"score\": 0,\n                                                            \"recipe\": {},\n                                                            \"user\": {}\n                                                        }\n                                                    ],\n                                                    \"discussions\": [\n                                                        {\n                                                            \"discussionId\": 0,\n                                                            \"title\": \"\",\n                                                            \"description\": \"\",\n                                                            \"creationDate\": \"\",\n                                                            \"user\": {},\n                                                            \"replies\": [\n                                                                {\n                                                                    \"replyId\": 0,\n                                                                    \"text\": \"\",\n                                                                    \"creationTime\": \"\",\n                                                                    \"user\": {},\n                                                                    \"discussion\": {}\n                                                                }\n                                                            ]\n                                                        }\n                                                    ],\n                                                    \"replies\": [\n                                                        {\n                                                            \"replyId\": 0,\n                                                            \"text\": \"\",\n                                                            \"creationTime\": \"\",\n                                                            \"user\": {},\n                                                            \"discussion\": {\n                                                                \"discussionId\": 0,\n                                                                \"title\": \"\",\n                                                                \"description\": \"\",\n                                                                \"creationDate\": \"\",\n                                                                \"user\": {},\n                                                                \"replies\": []\n                                                            }\n                                                        }\n                                                    ],\n                                                    \"challenges\": [\n                                                        {\n                                                            \"challengeId\": 0,\n                                                            \"title\": \"\",\n                                                            \"description\": \"\",\n                                                            \"startDate\": \"\",\n                                                            \"endDate\": \"\",\n                                                            \"recipes\": [ //Relationships\n                                                                {}\n                                                            ],\n                                                            \"users\": null\n                                                        }\n                                                    ]\n                                                },\n                                                \"challenge\": null,\n                                                \"comments\": null,\n                                                \"ratings\": null\n                                            },\n                                            \"user\": null\n                                        }\n                                    ],\n                                    \"ratings\": null,\n                                    \"discussions\": null,\n                                    \"replies\": null,\n                                    \"challenges\": null\n                                }\n                            ]\n                        },\n                        \"comments\": null,\n                        \"ratings\": null\n                    },\n                    \"user\": null\n                }\n            ],\n            \"discussions\": null,\n            \"replies\": null,\n            \"challenges\": null\n        },\n        \"challenge\": null,\n        \"comments\": null,\n        \"ratings\": null\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "ChallengeController"
+		},
+		{
+			"name": "RecipeController",
+			"item": [
+				{
+					"name": "createRecipe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"recipeId\": 0,\n    \"title\": \"White Chocolate Soufflé\",\n    \"description\": \"Elegant dessert\",\n    \"category\": \"Dessert\",\n    \"viewCount\": 0,\n    \"ingredients\": [\n        \"White Chocolate\",\n        \"Eggs\",\n        \"Sugar\"\n    ],\n    \"instructions\": \"Prepare chocolate base, whip eggs...\",\n    \"creationDate\": \"\",\n    \"author\": {\n        \"userId\": 2,\n        \"username\": \"\",\n        \"email\": \"\",\n        \"bio\": \"\"\n    },\n    \"averageRating\": 0.0,\n    \"isRated\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Recipedia}}/api/recipes",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"recipes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "createRecipe-Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"recipeId\": 0,\n    \"title\": \"\",\n    \"description\": \"\",\n    \"category\": \"\",\n    \"viewCount\": 0,\n    \"ingredients\": [\n        \"\"\n    ],\n    \"instructions\": \"\",\n    \"creationDate\": \"\",\n    \"author\": {\n        \"userId\": 0,\n        \"username\": \"\",\n        \"email\": \"\",\n        \"bio\": \"\"\n    },\n    \"averageRating\": 0.0,\n    \"isRated\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Recipedia}}/api/recipes",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"recipes"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"recipeId\": 0,\n    \"title\": \"\",\n    \"description\": \"\",\n    \"category\": \"\",\n    \"viewCount\": 0,\n    \"ingredients\": [\n        \"\"\n    ],\n    \"instructions\": \"\",\n    \"creationDate\": \"\",\n    \"author\": {\n        \"userId\": 0,\n        \"username\": \"\",\n        \"email\": \"\",\n        \"bio\": \"\"\n    },\n    \"averageRating\": 0.0,\n    \"isRated\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "getRecipe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/recipes/:recipeId?userId=",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"recipes",
+								":recipeId"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "recipeId",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getRecipe-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/recipes/:recipeId?userId=",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"recipes",
+										":recipeId"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "recipeId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"recipeId\": 0,\n    \"title\": \"\",\n    \"description\": \"\",\n    \"category\": \"\",\n    \"viewCount\": 0,\n    \"ingredients\": [\n        \"\"\n    ],\n    \"instructions\": \"\",\n    \"creationDate\": \"\",\n    \"author\": {\n        \"userId\": 0,\n        \"username\": \"\",\n        \"email\": \"\",\n        \"bio\": \"\"\n    },\n    \"averageRating\": 0.0,\n    \"isRated\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "updateRecipe",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"recipeId\": 0,\n    \"title\": \"White Chocolate Soufflé\",\n    \"description\": \"Elegant dessert\",\n    \"category\": \"Dessert\",\n    \"viewCount\": 0,\n    \"ingredients\": [\n        \"White Chocolate\",\n        \"Eggs\",\n        \"Sugar\"\n    ],\n    \"instructions\": \"Prepare chocolate base, whip eggs...\",\n    \"creationDate\": \"\",\n    \"author\": {\n        \"userId\": 0,\n        \"username\": \"\",\n        \"email\": \"\",\n        \"bio\": \"\"\n    },\n    \"averageRating\": 0.0,\n    \"isRated\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Recipedia}}/api/recipes/:recipeId",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"recipes",
+								":recipeId"
+							],
+							"variable": [
+								{
+									"key": "recipeId",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateRecipe-Example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"recipeId\": 0,\n    \"title\": \"\",\n    \"description\": \"\",\n    \"category\": \"\",\n    \"viewCount\": 0,\n    \"ingredients\": [\n        \"\"\n    ],\n    \"instructions\": \"\",\n    \"creationDate\": \"\",\n    \"author\": {\n        \"userId\": 0,\n        \"username\": \"\",\n        \"email\": \"\",\n        \"bio\": \"\"\n    },\n    \"averageRating\": 0.0,\n    \"isRated\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Recipedia}}/api/recipes/:recipeId",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"recipes",
+										":recipeId"
+									],
+									"variable": [
+										{
+											"key": "recipeId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"recipeId\": 0,\n    \"title\": \"\",\n    \"description\": \"\",\n    \"category\": \"\",\n    \"viewCount\": 0,\n    \"ingredients\": [\n        \"\"\n    ],\n    \"instructions\": \"\",\n    \"creationDate\": \"\",\n    \"author\": {\n        \"userId\": 0,\n        \"username\": \"\",\n        \"email\": \"\",\n        \"bio\": \"\"\n    },\n    \"averageRating\": 0.0,\n    \"isRated\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteRecipe",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/recipes/:recipeId",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"recipes",
+								":recipeId"
+							],
+							"variable": [
+								{
+									"key": "recipeId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleteRecipe-Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/recipes/:recipeId",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"recipes",
+										":recipeId"
+									],
+									"variable": [
+										{
+											"key": "recipeId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "null"
+						}
+					]
+				},
+				{
+					"name": "getAverageRating",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/recipes/:recipeId/average_rating",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"recipes",
+								":recipeId",
+								"average_rating"
+							],
+							"variable": [
+								{
+									"key": "recipeId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAverageRating-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/recipes/:recipeId/average_rating",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"recipes",
+										":recipeId",
+										"average_rating"
+									],
+									"variable": [
+										{
+											"key": "recipeId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周二, 07 1月 202511:30:41 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "0.0"
+						}
+					]
+				},
+				{
+					"name": "searchRecipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/recipes/search?keyword=Curry&category=Vegan",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"recipes",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "Curry"
+								},
+								{
+									"key": "category",
+									"value": "Vegan"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "searchRecipes-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/recipes/search?keyword=&category=",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"recipes",
+										"search"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": ""
+										},
+										{
+											"key": "category",
+											"value": ""
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周二, 07 1月 202511:30:41 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"recipeId\": 0,\n        \"title\": \"\",\n        \"description\": \"\",\n        \"category\": \"\",\n        \"viewCount\": 0,\n        \"ingredients\": [\n            \"\"\n        ],\n        \"instructions\": \"\",\n        \"creationDate\": \"\",\n        \"author\": {\n            \"userId\": 0,\n            \"username\": \"\",\n            \"email\": \"\",\n            \"bio\": \"\"\n        },\n        \"averageRating\": 0.0,\n        \"isRated\": false\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getMostViewedRecipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/recipes/popular",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"recipes",
+								"popular"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getMostViewedRecipes-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/recipes/popular",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"recipes",
+										"popular"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"recipeId\": 0,\n        \"title\": \"\",\n        \"description\": \"\",\n        \"category\": \"\",\n        \"viewCount\": 0,\n        \"ingredients\": [\n            \"\"\n        ],\n        \"instructions\": \"\",\n        \"creationDate\": \"\",\n        \"author\": {\n            \"userId\": 0,\n            \"username\": \"\",\n            \"email\": \"\",\n            \"bio\": \"\"\n        },\n        \"averageRating\": 0.0,\n        \"isRated\": false\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getCommentsByRecipe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/recipes/:recipeId/comments",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"recipes",
+								":recipeId",
+								"comments"
+							],
+							"variable": [
+								{
+									"key": "recipeId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getCommentsByRecipe-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/recipes/:recipeId/comments",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"recipes",
+										":recipeId",
+										"comments"
+									],
+									"variable": [
+										{
+											"key": "recipeId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周二, 07 1月 202511:30:41 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"commentId\": 0,\n        \"text\": \"\",\n        \"creationTime\": \"\",\n        \"user\": {\n            \"userId\": 0,\n            \"username\": \"\",\n            \"email\": \"\",\n            \"bio\": \"\"\n        },\n        \"recipeId\": 0\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "RecipeController"
+		},
+		{
+			"name": "CommentController",
+			"item": [
+				{
+					"name": "createComment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"commentId\": 0,\n  \"text\": \"Nice recipe!\",\n  \"creationTime\": \"\",\n  \"user\": {\n    \"userId\": 4,\n    \"username\": \"\",\n    \"email\": \"\",\n    \"bio\": \"\"\n  },\n  \"recipeId\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Recipedia}}/api/comments",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"comments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "createComment-Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"commentId\": 0,\n    \"text\": \"\",\n    \"creationTime\": \"\",\n    \"user\": {\n        \"userId\": 0,\n        \"username\": \"\",\n        \"email\": \"\",\n        \"bio\": \"\"\n    },\n    \"recipeId\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Recipedia}}/api/comments",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"comments"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"commentId\": 0,\n    \"text\": \"\",\n    \"creationTime\": \"\",\n    \"user\": {\n        \"userId\": 0,\n        \"username\": \"\",\n        \"email\": \"\",\n        \"bio\": \"\"\n    },\n    \"recipeId\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteComment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/comments/:commentId",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								":commentId"
+							],
+							"variable": [
+								{
+									"key": "commentId",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleteComment-Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/comments/:commentId",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"comments",
+										":commentId"
+									],
+									"variable": [
+										{
+											"key": "commentId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "null"
+						}
+					]
+				}
+			],
+			"description": "CommentController"
+		},
+		{
+			"name": "ReplyController",
+			"item": [
+				{
+					"name": "createReply",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"replyId\": 0,\n  \"text\": \"test\",\n  \"creationTime\": \"\",\n  \"user\": {\n    \"userId\": 2,\n    \"username\": \"\",\n    \"email\": \"\",\n    \"bio\": \"\"\n  },\n  \"discussionId\": 2\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Recipedia}}/api/replies",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"replies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "createReply-Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/xml",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<root>\n    <replyId>0</replyId>\n    <text>test</text>\n    <creationTime></creationTime>\n    <user>\n        <userId>2</userId>\n        <username></username>\n        <email></email>\n        <bio></bio>\n    </user>\n    <discussionId>2</discussionId>\n</root>\n",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Recipedia}}/api/replies",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"replies"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"replyId\": 0,\n    \"text\": \"\",\n    \"creationTime\": \"\",\n    \"user\": {\n        \"userId\": 0,\n        \"username\": \"\",\n        \"email\": \"\",\n        \"bio\": \"\"\n    },\n    \"discussionId\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteReply",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/replies/:replyId",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"replies",
+								":replyId"
+							],
+							"variable": [
+								{
+									"key": "replyId",
+									"value": "18"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleteReply-Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/replies/:replyId",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"replies",
+										":replyId"
+									],
+									"variable": [
+										{
+											"key": "replyId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "null"
+						}
+					]
+				}
+			],
+			"description": "ReplyController"
+		},
+		{
+			"name": "UserController",
+			"item": [
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 0,\n  \"username\": \"user123\",\n  \"email\": \"email@example.com\",\n  \"bio\": \"A food lover!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Recipedia}}/api/users/:userId",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateUser-Example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": 0,\n    \"username\": \"\",\n    \"email\": \"\",\n    \"bio\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Recipedia}}/api/users/:userId",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": 0,\n    \"username\": \"\",\n    \"email\": \"\",\n    \"bio\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/users/:userId",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleteUser-Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/users/:userId",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "null"
+						}
+					]
+				},
+				{
+					"name": "getRecipesByAuthor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/users/:authorId/recipes",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":authorId",
+								"recipes"
+							],
+							"variable": [
+								{
+									"key": "authorId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getRecipesByAuthor-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/users/:authorId/recipes",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"users",
+										":authorId",
+										"recipes"
+									],
+									"variable": [
+										{
+											"key": "authorId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周二, 07 1月 202511:30:41 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"recipeId\": 0,\n        \"title\": \"\",\n        \"description\": \"\",\n        \"category\": \"\",\n        \"viewCount\": 0,\n        \"ingredients\": [\n            \"\"\n        ],\n        \"instructions\": \"\",\n        \"creationDate\": \"\",\n        \"author\": {\n            \"userId\": 0,\n            \"username\": \"\",\n            \"email\": \"\",\n            \"bio\": \"\"\n        },\n        \"averageRating\": 0.0,\n        \"isRated\": false\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getDiscussionsByUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/users/:userId/discussions",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":userId",
+								"discussions"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getDiscussionsByUser-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/users/:userId/discussions",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"users",
+										":userId",
+										"discussions"
+									],
+									"variable": [
+										{
+											"key": "userId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周二, 07 1月 202511:30:41 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"discussionId\": 0,\n        \"title\": \"\",\n        \"description\": \"\",\n        \"creationDate\": \"\",\n        \"user\": {\n            \"userId\": 0,\n            \"username\": \"\",\n            \"email\": \"\",\n            \"bio\": \"\"\n        },\n        \"repliesCount\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getChallengesByUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/users/:userId/challenges",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":userId",
+								"challenges"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getChallengesByUser-Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/users/:userId/challenges",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"users",
+										":userId",
+										"challenges"
+									],
+									"variable": [
+										{
+											"key": "userId"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周二, 07 1月 202511:30:41 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"challengeId\": 0,\n        \"title\": \"\",\n        \"description\": \"\",\n        \"startDate\": \"\",\n        \"endDate\": \"\",\n        \"numberOfRecipes\": 0\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "UserController"
+		},
+		{
+			"name": "AuthController",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/auth/register?username=user000&password=password",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "user000"
+								},
+								{
+									"key": "password",
+									"value": "password"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register-Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/auth/register?username=&password=",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": ""
+										},
+										{
+											"key": "password",
+											"value": ""
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周二, 07 1月 202511:30:41 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": 0,\n    \"username\": \"\",\n    \"email\": \"\",\n    \"bio\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{Recipedia}}/api/auth/login?username=billy_herrington&password=password",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "billy_herrington"
+								},
+								{
+									"key": "password",
+									"value": "password"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login-Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/auth/login?username=&password=",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": ""
+										},
+										{
+											"key": "password",
+											"value": ""
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周二, 07 1月 202511:30:41 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": 0,\n    \"username\": \"\",\n    \"email\": \"\",\n    \"bio\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{Recipedia}}/api/auth/password/:userId?oldPassword=password&newPassword=pwd",
+							"host": [
+								"{{Recipedia}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"password",
+								":userId"
+							],
+							"query": [
+								{
+									"key": "oldPassword",
+									"value": "password"
+								},
+								{
+									"key": "newPassword",
+									"value": "pwd"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "changePassword-Example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{Recipedia}}/api/users/password?username=&oldPassword=&newPassword=",
+									"host": [
+										"{{Recipedia}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"password"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": ""
+										},
+										{
+											"key": "oldPassword",
+											"value": ""
+										},
+										{
+											"key": "newPassword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "周一, 06 1月 202521:43:13 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "server",
+									"value": "Apache-Coyote/1.1",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8",
+									"name": "content-type"
+								}
+							],
+							"cookie": [],
+							"body": "null"
+						}
+					]
+				}
+			]
+		}
+	]
+}
