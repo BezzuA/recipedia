@@ -111,6 +111,15 @@ public class RecipeController {
     }
 
     @GetMapping(
+        path = "/recent",
+        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+    )
+    public ResponseEntity<List<RecipeDto>> getRecentRecipes() {
+        List<RecipeDto> recipes = recipeService.getRecentRecipes();
+        return new ResponseEntity<>(recipes, HttpStatus.OK);
+    }
+
+    @GetMapping(
             path = "/{recipeId}/comments",
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
     )

@@ -15,4 +15,6 @@ public interface RecipeService {
     List<RecipeDto> getRecipesByChallenge(Long challengeId);
     List<RecipeDto> getMostViewedRecipes();
     List<RecipeDto> addAverageRatingToRecipeDtos(List<Recipe> recipes);
+
+    List<RecipeDto> getRecentRecipes();
 }

@@ -192,7 +192,7 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     @Transactional
     public List<RecipeDto> getMostViewedRecipes() {
-        List<Recipe> recipes = recipeRepository.findAllByOrderByViewCountDesc();
+        List<Recipe> recipes = recipeRepository.findAllByOrderByViewCountDesc().subList(0, 8);
 
         return addAverageRatingToRecipeDtos(recipes);
     }
@@ -207,5 +207,12 @@ public class RecipeServiceImpl implements RecipeService {
         }
 
         return recipeDtos;
+    }
+
+    @Override
+    public List<RecipeDto> getRecentRecipes() {
+        List<Recipe> recipes = recipeRepository.findAllByOrderByCreationDateDesc().subList(0, 4);
+
+        return addAverageRatingToRecipeDtos(recipes);
     }
 }
